@@ -1,11 +1,3 @@
-# react-webpack-6-tailwind-2
-
-React 17 Boilerplate with React 17, Webpack 6, Tailwind 2, HMR, using babel, Jest unit testing, sass, with a hot dev server and an optimized production build
-
-[Demo](https://dreamy-shirley-041c74.netlify.app/)
-
-Maintained by [Altafino - Full-Stack Go/JS Development](https://altafino.com)
-
 ## Last Changes (the newest first):
 
 - added full support for unit testing (with file mocks) using Jest
