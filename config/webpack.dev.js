@@ -18,14 +18,14 @@ module.exports = merge(common, {
     open: false,
     compress: true,
     hot: true,
-    port: 3000,
+    port: 3000
   },
 
   module: {
     rules: [
       // ... other rules
       {
-        test: /\.[js]sx?$/,
+        test:  /\.(jpg|jpeg|png|gif|mp3|mov|svg|ttf|woff2|woff|eot)$/gi,
         exclude: /node_modules/,
         use: [
           // ... other loaders
