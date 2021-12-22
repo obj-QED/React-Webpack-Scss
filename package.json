@@ -21,7 +21,8 @@
     "react-hls-player": "^3.0.7",
     "react-visibility-sensor": "^5.1.1",
     "redux": "^4.1.2",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.7",
+    "video-react": "^0.14.1"
   },
   "main": "index.js",
   "scripts": {

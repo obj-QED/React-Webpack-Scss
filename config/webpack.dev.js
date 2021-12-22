@@ -1,8 +1,8 @@
-const paths = require('./paths')
-const Dotenv = require('dotenv-webpack')
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const paths = require('./paths');
+const Dotenv = require('dotenv-webpack');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -18,14 +18,13 @@ module.exports = merge(common, {
     open: false,
     compress: true,
     hot: true,
-    port: 3000
+    port: 3090
   },
 
   module: {
     rules: [
-      // ... other rules
       {
-        test:  /\.(jpg|jpeg|png|gif|mp3|mov|svg|ttf|woff2|woff|eot)$/gi,
+        test: /\.[js]sx?$/,
         exclude: /node_modules/,
         use: [
           // ... other loaders
@@ -50,4 +49,4 @@ module.exports = merge(common, {
     // new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
-})
+});
