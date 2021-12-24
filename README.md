@@ -28,6 +28,14 @@ yarn start / npm start
 You can view the development server at `localhost:3000`.
 (change port in ./config/webpack.dev.js)
 
+### Problem local port
+```bash
+lsof -i tcp:3000 
+kill -9 44475 // Then to kill the process
+or
+sudo kill -9 44475
+
+```
 ### Unit Test
 
 ```bash

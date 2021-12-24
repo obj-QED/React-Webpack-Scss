@@ -1,20 +1,22 @@
-import { Component } from 'react';
+import React from "react";
 import '../assets//style/app.styles.scss';
 import img from '../assets/images/img.png';
 import ReactHlsPlayer from 'react-hls-player';
-// import VisibilitySensor from 'react-visibility-sensor';
+import VisibilitySensor from 'react-visibility-sensor';
 
+const HomePage = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
 
-class HomePage extends Component {
-  
-  render() {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <div className='text-black font-bold rounded-lg border shadow-lg p-10 m-20 w-8/12'>
-          <img src={ img } style={{ 'width': '100%', 'height': 'auto'}}></img>
+  return (
+    <div className='flex items-center justify-center h-screen'>
+      <div className='text-black font-bold rounded-lg border shadow-lg p-10 m-20 w-8/12'>
+        <img src={img} style={{ 'width': '100%', 'height': 'auto' }} />
+          // if ReactHlsPlayer is visible, start playing video using the react-visibility-senso library
+        <VisibilitySensor partialVisibility>
           <ReactHlsPlayer
-            // src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
-            src={'../assets/video/video.mov'}
+          // create source public link to video local file
+            src={'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'}
+            // src='../assets/video/video.mov'
             autoPlay={true}
             controls={false}
             width="100%"
@@ -26,10 +28,10 @@ class HomePage extends Component {
               debug: false,
             }}
           />
-          </div>
+        </VisibilitySensor>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default HomePage;

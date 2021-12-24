@@ -18,7 +18,7 @@ module.exports = merge(common, {
     open: false,
     compress: true,
     hot: true,
-    port: 3090
+    port: 3010
   },
 
   module: {
@@ -40,6 +40,18 @@ module.exports = merge(common, {
           },
         ],
       },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          'url-loader'
+        ]
+      }
     ],
   },
   plugins: [
