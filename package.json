@@ -19,6 +19,7 @@
     "react-component-viewer": "^0.25.0",
     "react-dom": "^17.0.2",
     "react-hls-player": "^3.0.7",
+    "react-player": "^2.9.0",
     "react-router-dom": "^6.2.1",
     "react-visibility-sensor": "^5.1.1",
     "redux": "^4.1.2",
