@@ -1,22 +1,18 @@
 export const accordionData = [
     {
-        title: 'Section 1',
-        content: 'Test',
-        videoFileUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'
+        item: {
+            title: 'What is the purpose of this website?',
+            content: 'This website is a tool to help you find the best place to stay in the city of Toronto. It is a place where you can find the best places to stay in Toronto, and the best places to stay in Toronto. This website is a tool to help you find the best place to stay in the city of Toronto. It is a place where you can find the best places to stay in Toronto, and the best places to stay in Toronto.',
+            videoFileUrl: '../assets/video/video.mov'
+        },
+        index: 0
     },
     {
-        title: 'Section 2',
-        content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-      reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-      quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-      pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-      quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-      Repudiandae, mollitia id reprehenderit a ab odit!`
+        item: {
+            title: 'How do I use this website?',
+            content: 'This website is a tool to help you find the best place to stay in the city of Toronto. It is a place where you can find the best places to stay in Toronto, and the best places to stay in Toronto. This website is a tool to help you find the best place to stay in the city of Toronto. It is a place where you can find the best places to stay in Toronto, and the best places to stay in Toronto.',
+            videoFileUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'
+        },
+        index: 1
     },
-    {
-        title: 'Section 3',
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`
-    }
 ];

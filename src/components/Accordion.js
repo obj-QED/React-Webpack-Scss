@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player'
 
-const Accordion = ({ title, content, videoFileUrl }) => {
+
+const Accordion = ({ item, index, onClick }) => {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div className="accordion-item">
+        <div className={`accordion-item ${isActive ? 'active' : ''}`}>
             <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-                <div>{title}</div>
+                <div>{item.title}</div>
                 <div>{isActive ? '-' : '+'}</div>
             </div>
             {isActive &&
                 <div className="accordion-content">
-                    {content}
+                    {item.content}
                     <ReactPlayer
                         className='react-player'
-                        url={ videoFileUrl }
+                        url={item.videoFileUrl}
                         width='500px'
                         height='auto'
                         playing
