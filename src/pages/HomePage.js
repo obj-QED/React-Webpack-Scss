@@ -3,12 +3,12 @@ import '../assets//style/app.styles.scss';
 
 import { Layout } from '../components//Layout';
 
-import Tabs from '../components/tabItem';
+import Tabs from '../components/TabItem';
 import { tabData } from '../utils/content';
 
 
 const HomePage = () => {
-
+  
   return (
     <Layout>
       <div className='flex items-center justify-center h-screen'>

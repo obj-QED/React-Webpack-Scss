@@ -80,7 +80,14 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
-
+      {
+        test: /\.(mp3|wav|ogg|mp4)$/,
+        // loader: 'url?limit=10000&mimetype=video/mp4'
+        loader: 'file'
+        // use: [
+        //   'file-loader'
+        // ]
+      },
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 
