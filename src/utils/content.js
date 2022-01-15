@@ -1,6 +1,7 @@
 export const tabData = [
     {
-        title: 'Tab 1',
+        title: 'Title',
+        subtitle: 'Subtitle 1',
         content: 'Tab 1 Content',
         video: {
             url: '../assets/video/file.mp4',
@@ -9,11 +10,14 @@ export const tabData = [
     },
     {
         title: 'Tab 2',
-        content: 'Tab 2 Content',
-        videoUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'
+        subtitle: 'Tab 2 Content',
+        video: {
+            url: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+            time: '61.999999',
+        }
     },
     {
         title: 'Tab 3',
-        content: 'Tab 3 Content',
+        subtitle: 'Tab 3 Content',
     },
 ]
