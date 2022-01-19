@@ -3,16 +3,24 @@ import '../assets//style/home.styles.scss';
 
 import { Layout } from '../components//Layout';
 
-import Tabs from '../components/TabItem';
-import { tabData } from '../utils/content';
-
+import SlickSlider from '../components/SlickSlider';
 
 const HomePage = () => {
-  
+
+  let [classState, setClassState] = React.useState(false);
+
+  const toggle = (e) => {
+    classState = !classState
+  }
+
   return (
     <Layout>
-      <div className='flex items-center justify-center h-screen'>
-        <Tabs items={tabData} />
+      <button onClick={toggle}>
+        TOGGLE
+      </button>
+      <div className={classState && 'is-active'}>
+        <SlickSlider />
+        <SlickSlider />
       </div>
     </Layout>
   );
