@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Layout = ({ children }) => (
-    <main className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16">
+    <main className="max-w-laptop-xl mx-auto lg:pt-35 pt-10 lg:px-21 md:px-10 px-6 pb-10 w-full">
         {children}
     </main>
 );

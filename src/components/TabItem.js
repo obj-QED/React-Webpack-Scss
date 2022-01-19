@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
 
+import '../assets/style/tabs.scss'
+
 import TabIconOne from '../assets/icons/tabs/humburger.svg'
 
 const TabContent = ({ title, content, video }) => (
@@ -16,7 +18,7 @@ const TabContent = ({ title, content, video }) => (
                     height='auto'
                     playing
                     muted={true}
-                    onProgress={(e) => console.log(e)}
+                    // onProgress={(e) => console.log(e)}
                     config={{
                         file: {
                             attributes: { preload: "auto" },
