@@ -40,7 +40,7 @@ class SubscibeFrom extends Component {
     }
 
     validateForm() {
-        this.setState({ formValid: this.state.emailValid });
+        this.setState({ formValid: this.state.emailValid && this.state.email.length > 0 });
         if (this.props.success) {
             this.setState({ formValid: true });
         }
@@ -49,6 +49,7 @@ class SubscibeFrom extends Component {
     errorClass(error) {
         return (error.length === 0 ? '' : 'has-error');
     }
+    
     success = () => {
         this.setState({ success: true });
     }
@@ -58,29 +59,22 @@ class SubscibeFrom extends Component {
         if (this.state.formValid) {
             console.log('Нет ошибок. Email:' + this.state.email);
             this.setState({ send: true });
-            
-            // block input and button
-            // this.setState({
-            //     email: '',
-            //     formValid: false,
-            //     success: false,
-            // });
-
             this.success();
         }
     }
-
+    
     render() {
         return (
             <form className="form mb-10" onSubmit={this.onSubmitForm}>
                 <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" required className="form-control" name="email"
-                        placeholder="Email"
+                    <input type="email" required className="form-control text-gray-800" name="email"
+                        placeholder="Enter your email"
                         value={this.state.email}
                         onChange={this.handleUserInput} />
                 </div>
                 <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Send</button>
+                {this.state.send && <FormErrors formErrors={this.state.formErrors} />}
                 <div className="panel panel-default">
                     <FormErrors formErrors={this.state.formErrors} />
                 </div>
