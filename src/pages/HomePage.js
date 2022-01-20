@@ -23,6 +23,7 @@ const HomePage = () => {
       </button>
       <div className={classState && 'is-active'}>
         <SlickSlider slides={integrationSlides.erps} />
+        <SlickSlider slides={integrationSlides.banks} />
       </div>
     </Layout>
   );

@@ -24,7 +24,34 @@ export const tabData = [
 
 export const integrationSlides = {
     banks: [
-
+        {
+            logo: 'bny-mellon',
+            title: 'BNY-Mellon'
+        },
+        {
+            logo: 'boa',
+            title: 'Bank-of-America'
+        },
+        {
+            logo: 'jack-henry',
+            title: 'Jack-Henry'
+        },
+        {
+            logo: 'jp-morgan',
+            title: 'JP-Morgan'
+        },
+        {
+            logo: 'paypal',
+            title: 'PayPal'
+        },
+        {
+            logo: 'us-bank',
+            title: 'US-Bank'
+        },
+        {
+            logo: 'wells-fargo',
+            title: 'Wells-Fargo'
+        },
     ],
     erps: [
         {
@@ -50,6 +77,14 @@ export const integrationSlides = {
         {
             logo: 'sage-intacct',
             title: 'Sage Intacct'
+        },
+        {
+            logo: 'guidewire',
+            title: 'Guidewire'
+        },
+        {
+            logo: 'sage-100',
+            title: 'Sage 100'
         },
     ]
 }

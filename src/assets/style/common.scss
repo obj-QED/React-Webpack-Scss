@@ -10,9 +10,11 @@
   --color-gray-300: 209, 213, 219;
   --color-dark: 12, 17, 27;
   --color-lilac-light: 151, 177, 254;
+  --color-slider-arrows: 39, 49, 75;
 
   --color-primary: var(--color-blue-600);
   --color-primary-dark: var(--color-blue-700);
+  --color-body: var(--color-gray-900);
 }
 
 #root {
@@ -33,7 +35,7 @@ body {
   min-height: 100vh;
   font-family: 'Inter','SF Pro Text','SF Pro Icons','Helvetica Neue','Helvetica','Arial',sans-serif;
   color: #fff;
-  background: RGB(var(--color-gray-900));
+  background: RGB(var(--color-body));
   overflow-x: hidden;
 }
 
