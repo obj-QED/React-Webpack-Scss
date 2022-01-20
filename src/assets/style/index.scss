@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 body {
     font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -12,3 +11,5 @@ body {
         @apply text-base leading-6 font-medium;
     }
 }
+
+@tailwind utilities;

@@ -2,13 +2,19 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: false,
+  mode: 'jit',
   prefix: '',
   important: false,
   separator: ':',
-  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   plugins: [
     require('@tailwindcss/forms'),
     require('tailwindcss-font-inter'),
+  ],
+  content: [
+    './components/**/*.{html,js}',
+    './pages/**/*.{html,js}',
+    './index.html',
   ],
   theme: {
     screens: {
@@ -187,9 +193,9 @@ module.exports = {
     container: {
       padding: '1.5rem'
     },
-    content: {
-      none: 'none',
-    },
+    // content: {
+    //   none: 'none',
+    // },
     cursor: {
       auto: 'auto',
       default: 'default',

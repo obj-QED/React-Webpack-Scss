@@ -25,7 +25,7 @@ const TabContent = ({ defaultItem, playing, title, content, video, setCurrentPro
             }
         }
     }
-    
+
     const playVideo = (videoRef) => {
         videoRef.current.seekTo(videoProgress["n" + active], 'fraction');
     }
@@ -43,15 +43,20 @@ const TabContent = ({ defaultItem, playing, title, content, video, setCurrentPro
                         width='500px'
                         height='auto'
                         playing={playing}
-
+                        controls={false}
                         muted={true}
                         onProgress={() => changeProgress(videoRef)}
+                        // onContextMenu={(e) => e.preventDefault()}
                         config={{
                             file: {
-                                attributes: { preload: "auto" },
+                                attributes: {
+                                    preload: "auto",
+                                    controls: false,
+                                },
                                 forceAudio: true,
                                 forceVideo: true,
-                                // forceHLS: true,
+                                forceHLS: true,
+                                forceDash: true,
                                 hlsOptions: {
                                     autoStartLoad: true,
                                     startPosition: -1,

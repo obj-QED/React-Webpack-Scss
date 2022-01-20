@@ -10,11 +10,15 @@ import "../../assets/style/index.scss";
 
 // Component
 import SubscibeFrom from "../../components/SubcribeForm";
+import Tabs from "../../components//TabItem";
+import  { tabData } from "../../utils/content"
 
 
 const HomePage = () => {
   return (
     <section className="hero">
+      <Tabs items={ tabData } />
+{/*       
       <div className="logo">
         <Link 
         to="/"
@@ -23,7 +27,7 @@ const HomePage = () => {
           <Logo alt="logo" />
           <p className="ml-3 uppercase">Smart hub</p>
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 }

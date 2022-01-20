@@ -81,16 +81,20 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.(mp3|wav|ogg|mp4)$/,
-        // loader: 'url?limit=10000&mimetype=video/mp4'
-        loader: 'file'
-        // use: [
-        //   'file-loader'
-        // ]
-      },
+        test: /\.mp4$/,
+        use: [
+            {
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]",
+                    outputPath: "video"
+                }
+            }
+        ]
+    },
       // Images: Copy image files to build folder
-      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
-
+      { test: /\.(?:ico|gif|png|jpg|jpeg|mp4)$/i, type: 'asset/resource', loader: 'file-loader', options: { name: '[name].[ext]' } },
+      
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
     ],
