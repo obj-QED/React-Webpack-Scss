@@ -1,13 +1,16 @@
 import React from "react";
+
+import '../assets/style/common.scss';
 import '../assets//style/home.styles.scss';
 
 import { Layout } from '../components//Layout';
 
 import SlickSlider from '../components/SlickSlider';
+import { integrationSlides } from '../utils/content';
 
 const HomePage = () => {
 
-  let [classState, setClassState] = React.useState(false);
+  let [classState, setState] = React.useState(false);
 
   const toggle = (e) => {
     classState = !classState
@@ -19,8 +22,7 @@ const HomePage = () => {
         TOGGLE
       </button>
       <div className={classState && 'is-active'}>
-        <SlickSlider />
-        <SlickSlider />
+        <SlickSlider slides={integrationSlides.erps} />
       </div>
     </Layout>
   );
