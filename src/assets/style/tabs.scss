@@ -1,51 +1,139 @@
-video#video-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.video-react {
-    position: relative;
-}
-
 .tab {
     &-heading {
-        @apply flex justify-between;
-        .tab-block {
-            @apply flex bg-gray-800 p-4 rounded-md relative;
-            &__icon {
+        .active {
+            cursor: default;
+        }
+        .item {
+            @apply border rounded-xlg p-6;
+            background: #0c111b;
+            .state {
                 .video-text {
-                    font-family: Inter;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 10px;
-                    line-height: 12px;
-                    color: #fff
+                    @apply text-blue-600 text-xxs font-medium leading-3 mt-2.5;
+                    background: rgba(37, 99, 235, 0.2);
+                    border-radius: 50px;
+                    padding: 2px 4px;
                 }
             }
             &__text {
-                @apply ml-4;
                 .title {
-                    @apply text-white text-base leading-6 font-bold;
+                    @apply text-base leading-6 font-bold;
                 }
                 .subtitle {
-                    @apply text-gray-300 text-sm leading-5 font-normal;
+                    @apply text-sm leading-5 font-normal text-gray-300;
                 }
-            }
-            &__progressbar {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 4px;
-                background: red;
+                .progressbar {
+                    bottom: 10px;
+                    width: 100%;
+                    height: 4px;
+                    @apply bg-gray-900 rounded-xlg;
+                    .progressbar-done {
+                        width: 0px;
+                        height: 4px;
+                        @apply bg-blue-600;
+                    }
+                }
             }
         }
     }
     &-content {
-        margin-top: 60px;
-        border: 1px solid #1f2937;
-        @apply px-10 py-6;
+        max-width: 1062px;
+        .data {
+            .react-player {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                border-radius: 22px;
+                box-shadow: #00000036 0px 100px 116px, #00000029 0px 50px 58px, #00000024 0px 30px 35px,
+                    #0000001f 0px 19px 22px, #0000001a 0px 12px 14px, #00000017 0px 8px 9px, #00000012 0px 5px 5px,
+                    #0000000d 0px 2px 2px;
+                padding-bottom: 60.265%;
+            }
+            video {
+                @apply absolute inset-0 w-full h-full object-cover;
+            }
+        }
+    }
+}
+
+// State Icon
+.tab {
+    &-heading {
+        .state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__icon.playing {
+                &:before {
+                    opacity: 1;
+                    background: conic-gradient(#2563eb, #1f2937);
+                    -webkit-animation: rotate360xy 4s linear infinite;
+                    animation: rotate360xy 4s linear infinite;
+                }
+            }
+            &__icon {
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                background-color: rgb(31, 41, 55);
+                box-shadow: inset 0 0 0 1px rgb(75, 85, 99);
+                color: rgb(37, 99, 235);
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 0;
+                    display: block;
+                    width: 150%;
+                    height: 150%;
+                    will-change: transform;
+                    opacity: 0;
+                    -webkit-transition: opacity 0.3s;
+                    transition: opacity 0.3s;
+                }
+                &__overlay {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-grow: 1;
+                    border-radius: 8px;
+                    margin: 2px;
+                    margin-left: 3px;
+                    background: rgb(31, 41, 55);
+                    .icon {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            padding: 8px;
+                            -ms-flex-negative: 0;
+                            flex-shrink: 0;
+                            opacity: 1;
+                            transition: opacity 0.3s;
+                        }
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+    @-webkit-keyframes rotate360xy {
+        from {
+            -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+            -webkit-transform: translate(-50%, -50%) rotate(-360deg);
+            transform: translate(-50%, -50%) rotate(-360deg);
+        }
     }
 }

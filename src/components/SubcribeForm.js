@@ -65,20 +65,21 @@ class SubscibeFrom extends Component {
     
     render() {
         return (
-            <form className="form mb-10" onSubmit={this.onSubmitForm}>
+            <form className="form grid grid-cols-form gap-x-3" onSubmit={this.onSubmitForm}>
                 <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" required className="form-control text-gray-800" name="email"
+                    <input type="email" required className="control w-full py-3 px-4" name="email"
                         placeholder="Enter your email"
                         value={this.state.email}
                         onChange={this.handleUserInput} />
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Send</button>
+                <button type="submit" className={`btn btn-submit py-3 px-4 ${ !this.state.formValid === true ? 'pointer-events-none	 opacity-90' : ''}`} disabled={!this.state.formValid}>Request full demo</button>
                 {this.state.send && <FormErrors formErrors={this.state.formErrors} />}
-                <div className="panel panel-default">
+                <div className="panel panel-default relative">
                     <FormErrors formErrors={this.state.formErrors} />
+                    {this.state.success && this.state.formValid &&
+                        <div className="alert-success absolute top-0 left-0">Thank you for subscribe</div>
+                    }
                 </div>
-                {this.state.success && <div className="alert-success">Thank you for subscribe</div>}
             </form>
         )
     }
