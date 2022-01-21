@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from 'react-player'
 
 import Progressbar from './Progressbar';
@@ -11,14 +11,13 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     if (active === null) {
         active = 0;
         video = defaultItem.video;
-
     }
 
     const videoRef = React.createRef(null);
 
     const changeProgress = (videoRef) => {
         const ch = videoProgress;
-        
+
         if (videoRef.current !== null) {
             ch["n" + active] = (+videoRef.current.getCurrentTime() / +videoRef.current.getDuration());
             setVideoProgress(ch);
@@ -33,6 +32,23 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
         videoRef.current.seekTo(videoProgress["n" + active], 'fraction');
     }
 
+    const src = video.url;
+    const [isReady, setIsReady] = useState(false);
+    const blobUrl = useRef(null);
+
+    useEffect(() => {
+        fetch(src)
+            .then((response) => response.blob())
+            .then((blob) => {
+                blobUrl.current = URL.createObjectURL(blob);
+                setIsReady(true);
+            });
+
+        return () => {
+            URL.revokeObjectURL(blobUrl.current);
+        };
+    }, []);
+
     return (
         <div className="tab-content w-10/12 mx-auto">
             <div className="data w-full h-full">
@@ -40,7 +56,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
                     <ReactPlayer ref={videoRef}
                         className='react-player'
                         onPlay={() => { playVideo(videoRef) }}
-                        url={video.url}
+                        url={ blobUrl.current }
                         width={'100%'}
                         height={'100%'}
                         playing={playing}
@@ -50,7 +66,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
                         config={{
                             activePlayer: true,
                             file: {
-                                attributes: { preload: "auto" },
+                                attributes: { preload: "auto", crossOrigin: 'anonymous' },
                                 forceAudio: true,
                                 forceVideo: true,
                                 // forceHLS: true,
