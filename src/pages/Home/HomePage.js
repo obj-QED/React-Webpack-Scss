@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM, { render } from "react-dom";
 import { Link } from "react-router-dom";
 
+// STYLE
+import '../../assets/style/index.scss';
+
 // Image & Icon
 import Logo from "../../assets/icons/logo.svg"
 import ScrollDown from "../../assets/icons/homepage/mouse.svg";

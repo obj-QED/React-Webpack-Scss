@@ -1,7 +1,6 @@
 module.exports = {
   env: {
     browser: true,
-    es5: true,
     es6: true,
     node: true,
   },
@@ -13,7 +12,7 @@ module.exports = {
     "prettier/react",
   ],
   parserOptions: {
-    ecmaVersion: "2018",
+    ecmaVersion: "2017",
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true,
