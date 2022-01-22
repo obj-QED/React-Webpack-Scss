@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 // STYLE
 import '../../assets/style/index.scss';
+import '../assets/style/common.scss';
 
 // Image & Icon
 import Logo from "../../assets/icons/logo.svg"
@@ -13,10 +14,21 @@ import ImageVideo from "../../assets/images/hero-video.png";
 // Component
 import SubscibeFrom from "../../components/SubcribeForm";
 import Tabs from "../../components/TabItem";
+import SlickSlider from '../components/SlickSlider';
+
+// Data components
 import { tabData } from "../../utils/content";
+import { integrationSlides } from '../utils/content';
 
 
 const HomePage = () => {
+
+  const [classState, setState] = React.useState(false);
+
+  const toggle = (e) => {
+    classState = !classState
+  }
+
   return (
     <React.Fragment>
       <section className="hero mt-24">
@@ -69,6 +81,15 @@ const HomePage = () => {
           </div>
         </div>
         <Tabs items={tabData} />
+      </section>
+      <section className="integration my-21">
+        <button onClick={toggle}>
+          TOGGLE
+        </button>
+        <div className={classState && 'is-active'}>
+          <SlickSlider slides={integrationSlides.erps} />
+          <SlickSlider slides={integrationSlides.banks} />
+        </div>
       </section>
     </React.Fragment>
   );
