@@ -23,7 +23,6 @@ import Footer from "../../components/Footer";
 
 
 const HomePage = () => {
-
   return (
     <React.Fragment>
       <section className="hero mt-24">
@@ -68,7 +67,7 @@ const HomePage = () => {
           badge="Payment Feature"
           title="Payment flexibility"
           descrpt="Make or request payments with a single click from within your ERP."
-          />
+        />
         <Tabs items={tabData} />
       </section>
       <section className="integration my-21">

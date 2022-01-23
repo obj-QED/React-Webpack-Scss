@@ -10,19 +10,6 @@ class InfoHeading extends Component {
             descrpt: this.props.descrpt
         }
     }
-    // TODO: you can enable any changes or features in the component
-    componentDidMount() {
-        const { uppercase, slice, replace } = this.props;
-        if (uppercase) this.setState({ title: this.state.title.toUpperCase() });
-        if (slice)
-            this.setState({
-                title: this.state.title.slice(slice[0], slice[1])
-            });
-        if (replace)
-            this.setState({
-                title: this.state.title.replace(replace[0], replace[1])
-            });
-    }
 
     render() {
         return (
