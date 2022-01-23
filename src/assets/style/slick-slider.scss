@@ -1,0 +1,18 @@
+.carousel {
+    .slider {
+        .block-integration {
+            &__block {
+                min-height: 132px;
+                background: #0c111b;
+            }
+            &__title {
+                margin-top: 23px;
+            }
+        }
+    }
+    &__footer {
+        p {
+            @apply text-xs leading-5 font-semibold uppercase text-gray-500;
+        }
+    }
+}

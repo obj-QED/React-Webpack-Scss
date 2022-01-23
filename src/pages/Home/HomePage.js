@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // STYLE
 import '../../assets/style/index.scss';
-import '../assets/style/common.scss';
+import '../../assets/style/common.scss';
 
 // Image & Icon
 import Logo from "../../assets/icons/logo.svg"
@@ -12,22 +12,16 @@ import ScrollDown from "../../assets/icons/homepage/mouse.svg";
 import ImageVideo from "../../assets/images/hero-video.png";
 
 // Component
+import InfoHeading from '../../components/InfoHeading';
 import SubscibeFrom from "../../components/SubcribeForm";
 import Tabs from "../../components/TabItem";
-import SlickSlider from '../components/SlickSlider';
+import SlickSlider from '../../components/SlickSlider';
 
 // Data components
 import { tabData } from "../../utils/content";
-import { integrationSlides } from '../utils/content';
 
 
 const HomePage = () => {
-
-  const [classState, setState] = React.useState(false);
-
-  const toggle = (e) => {
-    classState = !classState
-  }
 
   return (
     <React.Fragment>
@@ -66,30 +60,23 @@ const HomePage = () => {
             <img src={ImageVideo} style={{ 'position': 'absolute', top: 0, right: 'auto' }} />
           </div>
         </div>
-        {/* <Tabs items={tabData} /> */}
       </section>
       <section className="demonstration my-21">
-        <div className="heading mb-17 text-center column">
-          <div className="badge">
-            <span className="text">Payment Feature</span>
-          </div>
-          <div className="title my-6">
-            Payment flexibility
-          </div>
-          <div className="description">
-            Make or request payments with a single click from within your ERP.
-          </div>
-        </div>
+        <InfoHeading
+          classWrapper="mb-17"
+          badge="Payment Feature"
+          title="Payment flexibility"
+          descrpt="Make or request payments with a single click from within your ERP."
+          />
         <Tabs items={tabData} />
       </section>
       <section className="integration my-21">
-        <button onClick={toggle}>
-          TOGGLE
-        </button>
-        <div className={classState && 'is-active'}>
-          <SlickSlider slides={integrationSlides.erps} />
-          <SlickSlider slides={integrationSlides.banks} />
-        </div>
+        <InfoHeading
+          title={"Seamless integration and payments connectivity"}
+          descrpt={"SMART Hub can be embedded in the following ERPs and integrated with accounts from these banks:"}
+          classWrapper={"mb-17 w-6/12 mx-auto"}
+        />
+        <SlickSlider />
       </section>
     </React.Fragment>
   );

@@ -31,7 +31,10 @@ module.exports = merge(common, {
           {
             loader: require.resolve('babel-loader'),
             options: {
-              // ... other options
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react"
+              ].map(require.resolve),
               plugins: [
                 // ... other plugins
                 require.resolve('react-refresh/babel'),
