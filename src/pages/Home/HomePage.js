@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 // STYLE
 import '../../assets/style/index.scss';
-import '../../assets/style/common.scss';
 
 // Image & Icon
 import Logo from "../../assets/icons/logo.svg"
@@ -16,9 +15,11 @@ import InfoHeading from '../../components/InfoHeading';
 import SubscibeFrom from "../../components/SubcribeForm";
 import Tabs from "../../components/TabItem";
 import SlickSlider from '../../components/SlickSlider';
+import Cta from '../../components/Cta';
 
 // Data components
 import { tabData } from "../../utils/content";
+import Footer from "../../components/Footer";
 
 
 const HomePage = () => {
@@ -63,7 +64,7 @@ const HomePage = () => {
       </section>
       <section className="demonstration my-21">
         <InfoHeading
-          classWrapper="mb-17"
+          classWrapper="mb-17 text-center"
           badge="Payment Feature"
           title="Payment flexibility"
           descrpt="Make or request payments with a single click from within your ERP."
@@ -74,9 +75,15 @@ const HomePage = () => {
         <InfoHeading
           title={"Seamless integration and payments connectivity"}
           descrpt={"SMART Hub can be embedded in the following ERPs and integrated with accounts from these banks:"}
-          classWrapper={"mb-17 w-6/12 mx-auto"}
+          classWrapper={"mb-17 w-6/12 mx-auto text-center"}
         />
         <SlickSlider />
+      </section>
+      <section className="cta my-21">
+        <Cta />
+      </section>
+      <section className="footer">
+        <Footer />
       </section>
     </React.Fragment>
   );

@@ -26,7 +26,8 @@ class InfoHeading extends Component {
 
     render() {
         return (
-            <div className={`heading text-center column ${this.state.classWrapper}`} >
+            // if no classWrapper is passed, then it will be default
+            <div className={`heading column ${this.state.classWrapper ? this.state.classWrapper : ''}`}>
                 {this.state.badge &&
                     <div className="badge">
                         <span className="text">

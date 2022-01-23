@@ -62,6 +62,7 @@ module.exports = {
       10: '2.5rem',
       11: '2.75rem',
       12: '3rem',
+      13: '3.25rem',
       14: '3.5rem',
       15: '3.75rem',
       16: '4rem',
@@ -111,6 +112,7 @@ module.exports = {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'cta': 'linear-gradient(180deg, #90ABF9 0%, #B4BEFF 100%)',
     },
     backgroundOpacity: (theme) => theme('opacity'),
     backgroundPosition: {
@@ -168,6 +170,8 @@ module.exports = {
       xlg: '0.625rem',
       xl: '0.75rem',
       '2xl': '1rem',
+      // 22px Border Radius
+      '1.5xl': '1.25rem',
       '3xl': '1.5rem',
       full: '9999px',
     },
@@ -768,6 +772,7 @@ module.exports = {
       width: 'width',
     },
     transitionTimingFunction: {
+      ease: 'ease',
       DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
       linear: 'linear',
       in: 'cubic-bezier(0.4, 0, 1, 1)',
