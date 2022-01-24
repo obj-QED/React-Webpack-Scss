@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from 'react-player'
+import classNames from 'classnames';
 
 import ProgressBar from './ProgressBar';
 
@@ -105,7 +106,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     )
 };
 
-const tabItems = ({ items }) => {
+const tabItems = ({ items , mode, className }) => {
     let createProgressState = () => {
         let obj = {};
         for (let i = 0; i < items.length; i++) {
@@ -142,7 +143,14 @@ const tabItems = ({ items }) => {
 
     return (
         <div className="tab">
-            <div className="tab-heading grid grid-cols-4 gap-5 mb-20">
+            <div className={classNames('tab-heading mb-20',
+            className,
+            {
+                'grid grid-cols-4 gap-5': mode === 'default',
+                'center-mode': mode === 'center-mode',
+            }
+            )}>
+
                 {items.map((item, index) => {
                     return (
                         <div
@@ -224,7 +232,7 @@ const tabItems = ({ items }) => {
                     );
                 })}
             </div>
-            {<TabContent {...items[active]} defaultItem={items[0]} playing={playing} setCurrentProgress={setCurrentProgress} setPlaying={setPlaying} active={active} videoProgress={videoProgress} setVideoProgress={setVideoProgress} />}
+            <TabContent {...items[active]} defaultItem={items[0]} playing={playing} setCurrentProgress={setCurrentProgress} setPlaying={setPlaying} active={active} videoProgress={videoProgress} setVideoProgress={setVideoProgress} />
         </div>
     );
 };

@@ -19,6 +19,8 @@ import Cta from '../../components/Cta';
 
 // Data components
 import { tabData } from "../../utils/content";
+import { tabDataTwo } from "../../utils/content";
+import { tabDataThree } from "../../utils/content";
 import Footer from "../../components/Footer";
 
 
@@ -68,16 +70,25 @@ const HomePage = () => {
           title="Making payments"
           descrpt="Make or request payments with a single click from within your ERP."
         />
-        <Tabs items={tabData} />
+        <Tabs items={tabData} mode='default'/>
       </section>
       <section className="demonstration my-21">
         <InfoHeading
           classWrapper="mb-17 text-center"
           badge="Payment Feature"
-          title="Payment flexibility"
+          title="Managing payments"
           descrpt="Make or request payments with a single click from within your ERP."
         />
-        <Tabs items={tabData} />
+        <Tabs items={tabDataTwo} mode='default'/>
+      </section>
+      <section className="demonstration my-21">
+        <InfoHeading
+          classWrapper="mb-17 text-center"
+          badge="Payment flexibility"
+          title="Managing payments"
+          descrpt="Make or request payments with a single click from within your ERP."
+        />
+        <Tabs items={tabDataThree} mode='center-mode'/>
       </section>
       <section className="integration my-21">
         <InfoHeading
