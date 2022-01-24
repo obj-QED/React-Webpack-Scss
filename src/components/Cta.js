@@ -23,7 +23,7 @@ export default class Cta extends React.Component {
                             <Button className='mr-3 hover:bg-opacity-80' variant='dark' size='default' to="https://www.transcard.com/contact">
                                 Request full demo
                             </Button>
-                            <Button variant='light-border' size='default' to="https://www.transcard.com/embedded-payments/smart-hu">
+                            <Button variant='light-border' size='default' to="https://www.transcard.com/embedded-payments/smart-hub">
                                 Discover SMART Hub
                             </Button>
                         </div>
