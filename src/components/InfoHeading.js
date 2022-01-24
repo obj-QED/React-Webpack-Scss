@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class InfoHeading extends Component {
+export default class InfoHeading extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -36,5 +36,3 @@ class InfoHeading extends Component {
         );
     }
 }
-
-export default InfoHeading;

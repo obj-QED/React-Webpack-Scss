@@ -7,10 +7,8 @@
     "react",
     "reactjs",
     "webpack",
-    "boilerplate",
     "tailwind"
   ],
-  "license": "MIT",
   "name": "react-webpack-5-tailwind-2",
   "version": "1.0.1",
   "description": "Webpack 6 boilerplate with React 17, Tailwind 2, using babel, sass, with HMR and an optimized production build",
@@ -60,7 +58,7 @@
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
   "devDependencies": {
@@ -106,7 +104,7 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "terser-webpack-plugin": "^5.1.4",
-    "webpack": "^5.49.0",
+    "webpack": "^5.67.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"

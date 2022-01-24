@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-class Nav extends Component {
+export default class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,14 +10,18 @@ class Nav extends Component {
     return (
       <div className="navigation hidden">
         <div className="logo">
-          <Link to="/">
+          <Link to={{
+            pathname: "/"
+          }}>
             <p>Logo</p>
           </Link>
         </div>
         <nav className="nav">
           <ul className="nav-list">
             <NavLink className="item" to="/">
-              <li>Home</li>
+              <Link to="/404">
+                404 Error
+              </Link>
             </NavLink>
           </ul>
         </nav>
@@ -25,5 +29,3 @@ class Nav extends Component {
     );
   }
 }
-
-export default Nav;

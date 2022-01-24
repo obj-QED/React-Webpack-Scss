@@ -1,7 +1,8 @@
 node_modules
-dist
+build
 stats.json
 .DS_Store
 package-lock.json
 # jetbrains
 .idea
+LICENSE

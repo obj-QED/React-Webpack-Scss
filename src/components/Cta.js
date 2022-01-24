@@ -7,7 +7,7 @@ import '../assets/style/cta.scss';
 
 import HeroImage from '../assets/images/cta-image.png';
 
-class Cta extends Component {
+export default class Cta extends React.Component {
 
     render() {
         return (
@@ -36,5 +36,3 @@ class Cta extends Component {
         )
     }
 }
-
-export default Cta;

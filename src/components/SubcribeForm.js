@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormErrors } from '../components/FormsErrors';
 import '../assets/style/form.scss';
 
-class SubscibeFrom extends Component {
+export default class SubscibeFrom extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -84,5 +84,3 @@ class SubscibeFrom extends Component {
         )
     }
 }
-
-export default SubscibeFrom;

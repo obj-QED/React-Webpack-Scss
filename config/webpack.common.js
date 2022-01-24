@@ -1,5 +1,6 @@
 const paths = require('./paths')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // extract css to files
@@ -20,9 +21,11 @@ module.exports = {
   // Customize the webpack build process
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
+    new CleanWebpackPlugin(),
+
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
+      filename: 'styles/[name].css',
+      chunkFilename: '[id].css',
     }),
 
     // Copies files from target to destination folder
@@ -64,6 +67,7 @@ module.exports = {
           {
             loader: 'postcss-loader', // postcss loader needed for tailwindcss
             options: {
+              // javascriptEnabled: true,
               postcssOptions: {
                 ident: 'postcss',
                 plugins: [tailwindcss, autoprefixer],
@@ -79,13 +83,7 @@ module.exports = {
       },
 
       // Images: Copy image files to build folder
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg|mp4)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][name].[ext]',
-        },
-      },
+      { test: /\.(?:ico|gif|png|jpg|jpeg|mp4)$/i, type: 'asset/resource', },
 
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },

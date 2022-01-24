@@ -16,7 +16,7 @@ import Youtube from '../assets/icons/footer/youtube.svg';
 import Instagram from '../assets/icons/footer/instagram.svg';
 import Book from '../assets/icons/footer/book.svg';
 
-class Footer extends Component {
+export default class Footer extends React.Component {
 
     render() {
         return (
@@ -92,5 +92,3 @@ class Footer extends Component {
         )
     }
 }
-
-export default Footer;
