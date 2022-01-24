@@ -55,7 +55,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     const videoRef = React.createRef(null);
     const changeProgress = (videoRef) => {
         const ch = videoProgress;
-
+        console.log(setVideoProgress);
         if (videoRef.current !== null) {
             ch["n" + active] = (+videoRef.current.getCurrentTime() / +videoRef.current.getDuration());
             setVideoProgress(ch);

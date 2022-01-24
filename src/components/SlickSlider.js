@@ -57,8 +57,6 @@ export default function SlickSlider() {
     ]
   }
 
-
-  // ToogleButton onChange if true data is banks else ERPs   const data = integrationSlides.banks;
   const [data, setData] = useState(integrationSlides.banks);
 
   const toggleData = () => {
