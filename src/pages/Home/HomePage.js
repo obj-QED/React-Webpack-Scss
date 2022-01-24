@@ -48,8 +48,7 @@ const HomePage = () => {
                 See how SMART Hub works and discover the features that enable any business make and receive payments from a single place.
               </p>
             </div>
-            <SubscibeFrom />
-            <div className="scroll-down inline-flex items-center mt-17">
+            <div className="scroll-down inline-flex items-center">
               <span className="text">
                 Scroll down for features
               </span>
