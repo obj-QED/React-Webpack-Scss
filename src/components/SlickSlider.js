@@ -13,16 +13,12 @@ import ToggleButton from './ToggleButton';
 // Content
 import { integrationSlides } from '../utils/content';
 
-// Icons
-import FaChevronLeft from '../assets/icons/slider/arrow--left.svg';
-import FaChevronRight from '../assets/icons/slider/arrow--right.svg';
-
 
 export default function SlickSlider() {
   const [sliderRef, setSliderRef] = useState(null)
 
   const sliderSettings = {
-    arrows: false,
+    arrows: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -68,14 +64,6 @@ export default function SlickSlider() {
     <div className="carousel">
       <div className="switch-button">
         <ToggleButton onChange={toggleData} defaultChecked={false} />
-      </div>
-      <div className='controls'>
-        <button onClick={sliderRef?.slickPrev}>
-          <FaChevronLeft />
-        </button>
-        <button onClick={sliderRef?.slickNext}>
-          <FaChevronRight className="transform rotate-180" />
-        </button>
       </div>
       <div className='slider my-15'>
         <Slider ref={setSliderRef} {...sliderSettings}>
