@@ -23,6 +23,7 @@ import { tabDataTwo } from "../../utils/content";
 import { tabDataThree } from "../../utils/content";
 import Footer from "../../components/Footer";
 
+// upload home
 
 const HomePage = () => {
   return (
