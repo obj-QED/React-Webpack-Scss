@@ -84,8 +84,8 @@ const HomePage = () => {
       <section className="demonstration my-21">
         <InfoHeading
           classWrapper="mb-17 text-center"
-          badge="Payment flexibility"
-          title="Managing payments"
+          badge="Payment Feature"
+          title="Payment flexibility"
           descrpt="Make or request payments with a single click from within your ERP."
         />
         <Tabs items={tabDataThree} mode='center-mode'/>

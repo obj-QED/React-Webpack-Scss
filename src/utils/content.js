@@ -4,7 +4,7 @@ export const tabData = [
         subtitle: 'With a few clicks select the payable & initiate the payment via a desired method.',
         icon: '../assets/icons/tabs/Money.svg',
         video: {
-            url: '../assets/video/1.mp4',
+            url: '../assets/video/one.mp4',
         },
     },
     {
@@ -12,7 +12,7 @@ export const tabData = [
         subtitle: 'Instead of immediately, schedule your payments just as easily.',
         icon: '../assets/icons/tabs/Clock.svg',
         video: {
-            url: '../assets/video/2.mp4',
+            url: '../assets/video/two.mp4',
         }
     },
     {
@@ -20,7 +20,7 @@ export const tabData = [
         subtitle: 'Select multiple invoices to initiate the payment on all of them at once.',
         icon: '../assets/icons/tabs/Select.svg',
         video: {
-            url: '../assets/video/3.mp4'
+            url: '../assets/video/three.mp4'
         }
     },
     {
@@ -28,7 +28,7 @@ export const tabData = [
         subtitle: 'If needed - initiate a partial payment. Also, you can attach a note if necessary.',
         icon: '../assets/icons/tabs/Social.svg',
         video: {
-            url: '../assets/video/4.mp4'
+            url: '../assets/video/four.mp4'
         }
     },
 ];
@@ -39,7 +39,7 @@ export const tabDataTwo = [
         subtitle: 'See payment status at a glance across three categories for easier navigation.',
         icon: '../assets/icons/tabs/humburger.svg',
         video: {
-            url: '../assets/video/5.mp4'
+            url: '../assets/video/five.mp4'
         }
     },
     {
@@ -47,7 +47,7 @@ export const tabDataTwo = [
         subtitle: 'At any time synchronize the data from your connected accounting software or ERP.',
         icon: '../assets/icons/tabs/sync.svg',
         video: {
-            url: '../assets/video/6.mp4'
+            url: '../assets/video/six.mp4'
         }
     },
     {
@@ -55,7 +55,7 @@ export const tabDataTwo = [
         subtitle: 'For each of your payables you can view the historic activity log.',
         icon: '../assets/icons/tabs/view.svg',
         video: {
-            url: '../assets/video/7.mp4'
+            url: '../assets/video/seven.mp4'
         }
     },
     {
@@ -63,7 +63,7 @@ export const tabDataTwo = [
         subtitle: 'Export and share any of your payment statuses or historic activity log.',
         icon: '../assets/icons/tabs/partial.svg',
         video: {
-            url: '../assets/video/8.mp4'
+            url: '../assets/video/eith.mp4'
         }
     },
 ];
@@ -74,7 +74,7 @@ export const tabDataThree = [
         subtitle: 'Disburse funds via any payment method - ACH, RTP or cards.',
         icon: '../assets/icons/tabs/switch.svg',
         video: {
-            url: '../assets/video/9.mp4'
+            url: '../assets/video/nine.mp4'
         }
     },
     {
@@ -82,7 +82,7 @@ export const tabDataThree = [
         subtitle: 'Choose what bank account you want to originate a payment from.',
         icon: '../assets/icons/tabs/banks.svg',
         video: {
-            url: '../assets/video/10.mp4'
+            url: '../assets/video/then.mp4'
         }
     },
 ];
@@ -91,19 +91,19 @@ export const integrationSlides = {
     banks: [
         {
             logo: 'bny-mellon',
-            title: 'BNY-Mellon'
+            title: 'BNY Mellon'
         },
         {
             logo: 'boa',
-            title: 'Bank-of-America'
+            title: 'Bank of America'
         },
         {
             logo: 'jack-henry',
-            title: 'Jack-Henry'
+            title: 'Jack Henry'
         },
         {
             logo: 'jp-morgan',
-            title: 'JP-Morgan'
+            title: 'JP Morgan'
         },
         {
             logo: 'paypal',
@@ -111,11 +111,11 @@ export const integrationSlides = {
         },
         {
             logo: 'us-bank',
-            title: 'US-Bank'
+            title: 'US Bank'
         },
         {
             logo: 'wells-fargo',
-            title: 'Wells-Fargo'
+            title: 'Wells Fargo'
         },
     ],
     erps: [
