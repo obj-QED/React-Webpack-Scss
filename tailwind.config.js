@@ -232,6 +232,7 @@ module.exports = {
     },
     fill: { current: 'currentColor' },
     grayscale: {
+      none: 'none',
       0: '0',
       DEFAULT: '100%',
     },
@@ -770,6 +771,7 @@ module.exports = {
       shadow: 'box-shadow',
       transform: 'transform',
       width: 'width',
+      filter: 'filter',
     },
     transitionTimingFunction: {
       ease: 'ease',

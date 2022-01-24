@@ -20,10 +20,10 @@ export default class Cta extends React.Component {
                             descrpt='Make or request payments with a single click from within your ERP.'
                         />
                         <div className='flex items-center mt-13'>
-                            <Button className='mr-3 hover:bg-opacity-80' variant='dark' size='default' to="/">
+                            <Button className='mr-3 hover:bg-opacity-80' variant='dark' size='default' to="https://www.transcard.com/contact">
                                 Request full demo
                             </Button>
-                            <Button variant='light-border' size='default' to="/">
+                            <Button variant='light-border' size='default' to="https://www.transcard.com/embedded-payments/smart-hu">
                                 Discover SMART Hub
                             </Button>
                         </div>

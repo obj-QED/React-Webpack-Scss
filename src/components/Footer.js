@@ -17,7 +17,6 @@ import Instagram from '../assets/icons/footer/instagram.svg';
 import Book from '../assets/icons/footer/book.svg';
 
 export default class Footer extends React.Component {
-
     render() {
         return (
             <footer className='footer'>
@@ -32,14 +31,12 @@ export default class Footer extends React.Component {
                             </div>
                             <div className='support__list flex ml-4'>
                                 <div className='support__list__item mr-1'>
-                                    <Link to='/' target='_blank'>
-                                        <SupportOne className='grayscale hover:grayscale-0 transition-all duration-300'/>
-                                    </Link>
+                                    <a href='https://www.transcard.com/embedded-payments/smart-disburse' target='_blank'>
+                                        <SupportOne className='grayscale hover:grayscale-none transition-filter duration-300'/>
+                                    </a>
                                 </div>
                                 <div className='support__list__item'>
-                                    <Link to='/' target='_blank'>
-                                        <SupportTwo className='grayscale hover:grayscale-0 transition-all duration-300'/>
-                                    </Link>
+                                        <SupportTwo className='grayscale hover:grayscale-none transition-filter duration-300'/>
                                 </div>
                             </div>
                         </div>
@@ -51,29 +48,29 @@ export default class Footer extends React.Component {
                             </div>
                             <div className='media__list ml-6 flex items-center flex-row'>
                                 <div className='media__list__item mr-2.5'>
-                                    <Link to='/' target='_blank'>
-                                        <Linkedin className='grayscale hover:grayscale-0 transition-all duration-300' />
-                                    </Link>
+                                    <a href='https://www.linkedin.com/company/transcard' target='_blank'>
+                                        <Linkedin className='grayscale hover:grayscale-none transition-filter duration-300' />
+                                    </a>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
-                                    <Link to='/' target='_blank'>
-                                        <Twitter className='grayscale hover:grayscale-0 transition-all duration-300' />
-                                    </Link>
+                                    <a href='https://twitter.com/TransCardLLC' target='_blank'>
+                                        <Twitter className='grayscale hover:grayscale-none transition-filter duration-300' />
+                                    </a>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
-                                    <Link to='/' target='_blank'>
-                                        <Youtube className='grayscale hover:grayscale-0 transition-all duration-300' />
-                                    </Link>
+                                    <a href='https://www.youtube.com/channel/UCPLhZfcmEtv2Pu5ITztSGpw' target='_blank'>
+                                        <Youtube className='grayscale hover:grayscale-none transition-filter duration-300' />
+                                    </a>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
-                                    <Link to='/' target='_blank'>
-                                        <Instagram className='grayscale hover:grayscale-0 transition-all duration-300' />
-                                    </Link>
+                                    <a href='https://www.instagram.com/transcard_/' target='_blank'>
+                                        <Instagram className='grayscale hover:grayscale-none transition-filter duration-300' />
+                                    </a>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
-                                    <Link to='/' target='_blank'>
-                                        <Book className='grayscale hover:grayscale-0 transition-all duration-300' />
-                                    </Link>
+                                    <a href='https://blog.transcard.com/' target='_blank'>
+                                        <Book className='grayscale hover:grayscale-none transition-filter duration-300' />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -83,10 +80,10 @@ export default class Footer extends React.Component {
                     <div className='copyright'>
                         Copyright 2022 Transcard Payments. All Rights Reserved.
                     </div>
-                    <Link to="/" className='powered flex flex-nowrap items-center'>
+                    <a href="https://www.transcard.com/" target="_blank" className='powered flex flex-nowrap items-center'>
                         <Shield className='mr-1.5'/>
                         <span>POWERED BY TRANSCARD</span>
-                    </Link>
+                    </a>
                 </div>
             </footer>
         )
