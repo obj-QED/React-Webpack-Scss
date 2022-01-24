@@ -33,12 +33,12 @@ export default class Footer extends React.Component {
                             <div className='support__list flex ml-4'>
                                 <div className='support__list__item mr-1'>
                                     <Link to='/' target='_blank'>
-                                        <SupportOne className='grayscale hover:grayscale-0'/>
+                                        <SupportOne className='grayscale hover:grayscale-0 transition-all duration-300'/>
                                     </Link>
                                 </div>
                                 <div className='support__list__item'>
                                     <Link to='/' target='_blank'>
-                                        <SupportTwo className='grayscale hover:grayscale-0'/>
+                                        <SupportTwo className='grayscale hover:grayscale-0 transition-all duration-300'/>
                                     </Link>
                                 </div>
                             </div>
@@ -52,27 +52,27 @@ export default class Footer extends React.Component {
                             <div className='media__list ml-6 flex items-center flex-row'>
                                 <div className='media__list__item mr-2.5'>
                                     <Link to='/' target='_blank'>
-                                        <Linkedin className='grayscale hover:grayscale-0' />
+                                        <Linkedin className='grayscale hover:grayscale-0 transition-all duration-300' />
                                     </Link>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
                                     <Link to='/' target='_blank'>
-                                        <Twitter className='grayscale hover:grayscale-0' />
+                                        <Twitter className='grayscale hover:grayscale-0 transition-all duration-300' />
                                     </Link>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
                                     <Link to='/' target='_blank'>
-                                        <Youtube className='grayscale hover:grayscale-0' />
+                                        <Youtube className='grayscale hover:grayscale-0 transition-all duration-300' />
                                     </Link>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
                                     <Link to='/' target='_blank'>
-                                        <Instagram className='grayscale hover:grayscale-0' />
+                                        <Instagram className='grayscale hover:grayscale-0 transition-all duration-300' />
                                     </Link>
                                 </div>
                                 <div className='media__list__item mr-2.5'>
                                     <Link to='/' target='_blank'>
-                                        <Book className='grayscale hover:grayscale-0' />
+                                        <Book className='grayscale hover:grayscale-0 transition-all duration-300' />
                                     </Link>
                                 </div>
                             </div>

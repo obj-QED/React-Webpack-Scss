@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 body {
+    --bg-color-body: #111827;
     font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    @apply bg-gray-900 text-white overflow-x-hidden;
+    background-color: var(--bg-color-body, #111827);
+    @apply text-white overflow-x-hidden;
 }
 section {
     @apply py-15;
