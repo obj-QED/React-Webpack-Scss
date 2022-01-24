@@ -13,8 +13,7 @@ const SEO = ({
     siteName = true,
 }) => {
     const { pathname } = useLocation();
-    
-    const metaDescription = description || site.siteMetadata.description;
+
 
     const site = {
         name: siteName,
@@ -30,6 +29,9 @@ const SEO = ({
             siteUrl: window.location.host,
         },
     };
+
+    const metaDescription = description || site.siteMetadata.description;
+
     const titleTemplate = siteName ? `%s | ${site.siteMetadata.siteName}` : '%s';
 
     return (

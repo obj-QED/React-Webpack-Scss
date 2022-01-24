@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 
 const NotFoundPage = () => (
   <React.Fragment>
-    <SEO 
+    <SEO
     title="404: Not found"
     description="Test description"
     keywords="smart hub, smart hub page, smart hub page demo"
