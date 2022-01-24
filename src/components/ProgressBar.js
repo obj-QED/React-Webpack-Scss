@@ -7,8 +7,8 @@ export default function Progressbar({ done }) {
         className={"progressbar-done h-full"}
         style={{
           width: `${Math.round(done * 100)}%`,
-          transition: `width ${Math.abs(done - 1)}s ease`,
-          transitionDelay: `${Math.abs(done)}s`,
+          // transition: `width ${Math.abs(done - 1)}s ease`,
+          // transitionDelay: `${Math.abs(done)}s`,
         }}
       ></div>
     </div>
