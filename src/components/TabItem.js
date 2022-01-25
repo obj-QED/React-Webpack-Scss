@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 import classNames from 'classnames';
 
 import ProgressBar from './ProgressBar';
 
 // TODO: view how problem import scss file
 // Style
-import '../assets/style/tabs.scss'
+import '../assets/style/tabs.scss';
 
 const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlaying, active, videoProgress, setVideoProgress }) => {
 
@@ -26,11 +26,11 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
                 setPlaying(false);
             }
         }
-    }
+    };
 
     const playVideo = (videoRef) => {
         videoRef.current.seekTo(videoProgress["n" + active], 'fraction');
-    }
+    };
 
     return (
         <div className="tab-content w-10/12 mx-auto">
@@ -71,25 +71,7 @@ const tabItems = ({ items, mode, className }) => {
     const [isReady, setIsReady] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [video, setVideo] = useState(null);
-    // const [loading, setLoading] = useState(false);
-
-    useState(() => {
-        items.forEach(item => {
-            if (items.length > 0 && !video) {
-                // if (item.video && item.video.url)
-                // setIsLoading(true);
-                fetch(item.video.url)
-                    .then(res => res.blob())
-                    .then(blob => {
-                        item.video.url = URL.createObjectURL(blob);
-                        setIsReady(true);
-                        setVideo(item.video);
-                    })
-                setIsLoading(true);
-            }
-        })
-    }, [items]);
-
+    
     let createProgressState = () => {
         let obj = {};
         for (let i = 0; i < items.length; i++) {
@@ -124,7 +106,42 @@ const tabItems = ({ items, mode, className }) => {
         setPlaying(!playing);
     }
 
-    return (
+    useState(() => {
+        items.forEach(item => {
+            if (items.length > 0 && !video) {
+                // if (item.video && item.video.url)
+                // setIsLoading(true);
+                fetch(item.video.url)
+                    .then(res => res.blob())
+                    .then(blob => {
+                        item.video.url = URL.createObjectURL(blob);
+                        setIsReady(true);
+                        setVideo(item.video);
+                    })
+                setIsLoading(true);
+            }
+        })
+    }, [items]);
+
+    // Variable Two
+    // useEffect(() => {
+    //     items.forEach(item => {
+    //         if (item.video.url.indexOf('blob:') === -1 ) {
+    //             fetch(item.video.url)
+    //                 .then(response => {
+    //                     if (response.ok) {
+    //                         return response.blob();
+    //                     }
+    //                     throw new Error('Network response was not ok.');
+    //                 })
+    //                 .then(blob => {
+    //                     item.video.url = URL.createObjectURL(blob);
+    //                     setVideo(item.video);
+    //                 })
+    //         }
+    //     });
+    // }, []);
+                return (
         <div className="tab">
             <div className={classNames('tab-heading mb-20',
                 className,
@@ -140,7 +157,7 @@ const tabItems = ({ items, mode, className }) => {
                             key={index}
                             className={`item flex justify-between
                             ${index === active ? 'active' : ''}
-                            ${index === hover || index === active && playing ? 'shadow-lg cursor-pointer border-blueCustom-200' : 'border-gray-800'}
+                            ${index === hover || index === active && playing ? 'shadow-tab-head cursor-pointer border-blueCustom-200' : 'border-gray-800'}
                             `}
                             onClick={openTab}
                             onMouseEnter={mEnter}

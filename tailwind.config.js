@@ -191,6 +191,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
+      'tab-head': '0px 100px 80px #2444a512, 0px 41.7776px 33.4221px #2444a50d, 0px 22.3363px 17.869px #2444a50a, 0px 12.5216px 10.0172px #2444a50a, 0px 6.6501px 5.32008px #2444a508, 0px 2.76726px 2.21381px #2444a505',
     },
     caretColor: (theme) => theme('colors'),
     contrast: {

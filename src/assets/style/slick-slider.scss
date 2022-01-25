@@ -1,7 +1,6 @@
 .carousel {
     .slider {
         position: relative;
-
         &:hover {
             .slick-arrow {
                 opacity: 1;
@@ -36,6 +35,18 @@
 
         .slick-list {
             margin: 0 -10px;
+        }
+
+        .slick-slide {
+            img {
+                filter: grayscale(1);
+                transition: filter .4s ease;
+            }
+            &:hover {
+                img {
+                    filter: none
+                }
+            }
         }
 
         .slick-arrow {
@@ -86,6 +97,7 @@
             &__block {
                 min-height: 132px;
                 background: #0c111b;
+                @apply cursor-pointer
             }
             &__title {
                 margin-top: 23px;

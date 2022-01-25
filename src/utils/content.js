@@ -90,12 +90,12 @@ export const tabDataThree = [
 export const integrationSlides = {
     banks: [
         {
-            logo: 'bny-mellon',
-            title: 'BNY Mellon'
+            logo: 'wells-fargo',
+            title: 'Wells Fargo',
         },
         {
-            logo: 'boa',
-            title: 'Bank of America'
+            logo: 'bny-mellon',
+            title: 'BNY Mellon',
         },
         {
             logo: 'jack-henry',
@@ -114,42 +114,42 @@ export const integrationSlides = {
             title: 'US Bank'
         },
         {
-            logo: 'wells-fargo',
-            title: 'Wells Fargo'
+            logo: 'bank-of-america',
+            title: 'Bank of America'
         },
     ],
     erps: [
+        {
+            logo: 'quickbooks',
+            title: 'QuickBooks'
+        },
         {
             logo: 'sage-50',
             title: 'Sage 50'
         },
         {
-            logo: 'oracle',
-            title: 'Oracle'
+            logo: 'sage-Intacct',
+            title: 'Sage Intacct'
         },
         {
-            logo: 'sap',
-            title: 'SAP B-1'
+            logo: 'sage-100',
+            title: 'Sage 100'
+        },
+        {
+            logo: 'guidewire',
+            title: 'Quidewire'
         },
         {
             logo: 'acumatica',
             title: 'Acumatica'
         },
         {
-            logo: 'qb',
-            title: 'QuickBooks'
+            logo: 'SAP',
+            title: 'SAP'
         },
         {
-            logo: 'sage-intacct',
-            title: 'Sage Intacct'
-        },
-        {
-            logo: 'guidewire',
-            title: 'Guidewire'
-        },
-        {
-            logo: 'sage-100',
-            title: 'Sage 100'
+            logo: 'oracle',
+            title: 'Oracle'
         },
     ]
 }
