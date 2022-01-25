@@ -26,6 +26,7 @@ import Footer from "../../components/Footer";
 // upload home
 
 const HomePage = () => {
+
   return (
     <React.Fragment>
       <section className="hero mt-24">

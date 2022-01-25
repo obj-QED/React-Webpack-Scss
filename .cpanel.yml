@@ -1,0 +1,16 @@
+---
+deployment:
+  tasks:
+    # NOTE: public_html on cPanel must not be removed or renamed.
+    # This folder has owner USER:nobody, and the USER user does not have
+    # access to change owner. So this folder must stay as-is to keep the nobody
+    # group, which is critical to the site working. A new folder won't work.
+    - export DEPLOYPATH=/home/demoadmin/public_html/
+    - export REPOPATH=/home/demoadmin/nodeapp/smartsuite/
+    - export BUILDPATH=/home/demoadmin/nodeapp/smartsuite/build/.
+    - /opt/cpanel/ea-nodejs16/bin/yarn
+    - /opt/cpanel/ea-nodejs16/bin/yarn build 
+    # Copy old site files to another directory.
+    - /bin/cp -R ${BUILDPATH} ${DEPLOYPATH}
+    # Sync repository files to the deploy target path, excluding .git folder.
+    # --delete-after will remove deleted files and folders after syncin

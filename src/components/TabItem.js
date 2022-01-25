@@ -15,44 +15,6 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
         video = defaultItem.video;
     }
 
-    // NOTE: This is a hack to make sure the video plays on tab click and change the url
-    const [isReady, setIsReady] = useState(false);
-    const blobUrl = useRef(null);
-    const [isLoading, setIsLoading] = useState(false);
-    
-    // FIX: changing the url affects the video and changes jerkily
-    useEffect(() => {
-        if (video !== null) {
-            setIsLoading(true);
-            fetch(video.url)
-                .then(res => res.blob())
-                .then(blob => {
-                    blobUrl.current = URL.createObjectURL(blob);
-                    setIsLoading(false);
-                })
-        }
-    }, [video]);
-
-    // HACK: needs to be improved
-    // useEffect(() => {
-    //     if (video.url && !isLoading && video !== null) {
-    //         videoRef.current.seekTo(videoProgress["n" + active], 'fraction');
-    //         playVideo(videoRef);
-    //         const url = video.url;
-    //         const xhr = new XMLHttpRequest();
-    //         xhr.open('GET', url, true);
-    //         xhr.responseType = 'blob';
-    //         xhr.onload = function () {
-    //             if (this.status == 200) {
-    //                 const blob = this.response;
-    //                 blobUrl.current = URL.createObjectURL(blob);
-    //                 setIsReady(true);
-    //             }
-    //         };
-    //         xhr.send();
-    //     }
-    // }, [video.url]);
-
     const videoRef = React.createRef(null);
     const changeProgress = (videoRef) => {
         const ch = videoProgress;
@@ -78,7 +40,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
                     <ReactPlayer ref={videoRef}
                         className='react-player'
                         onPlay={() => { playVideo(videoRef) }}
-                        url={ blobUrl.current }
+                        url={ video.url }
                         width={'100%'}
                         height={'100%'}
                         playing={playing}
@@ -107,6 +69,23 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
 };
 
 const tabItems = ({ items , mode, className }) => {
+    const [isReady, setIsReady] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
+    
+
+    useEffect(() => {
+        items.forEach(item => {
+        // if (items.length > 0 && !isReady) {
+                fetch(item.video.url)
+                    .then(res => res.blob())
+                    .then(blob => {
+                        item.video.url  = URL.createObjectURL(blob);
+                        setIsReady(true);
+                    })
+                // }
+            })
+    }, [items]);
+   
     let createProgressState = () => {
         let obj = {};
         for (let i = 0; i < items.length; i++) {
