@@ -73,7 +73,7 @@ const tabItems = ({ items, mode, className }) => {
     const [video, setVideo] = useState(null);
     // const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
+    useState(() => {
         items.forEach(item => {
             if (items.length > 0 && !video) {
                 // if (item.video && item.video.url)
