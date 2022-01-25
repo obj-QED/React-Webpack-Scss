@@ -10,9 +10,10 @@ module.exports = {
     "plugin:react/recommended",
     "prettier",
     "prettier/react",
+    "airbnb",
   ],
   parserOptions: {
-    ecmaVersion: "2017",
+    ecmaVersion: 12,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true,

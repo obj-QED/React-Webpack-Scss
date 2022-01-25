@@ -51,7 +51,7 @@ sudo kill -9 44475
 ## Features
 
 - [React 17](https://reactjs.org/)
-- [Webpack 6](https://webpack.js.org/)
+- [Webpack 5](https://webpack.js.org/)
 - [Tailwind 2](https://tailwindcss.com)
 - [Jest 27](http://jestjs.io/)
 - [PostCss](https://postcss.org/)

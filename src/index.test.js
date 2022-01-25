@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+// import '@testing-library/jest-dom';
 import PageIndex from './index.js';
 
 test('check first div text', () => {
