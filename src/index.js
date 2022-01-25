@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from 'react-dom';
+import App from "./App";
 
 // PAGE
-import Navigation from "./components/Navigation";
 const rootElement = document.getElementById("root");
 
-const App = () => {
+const Index = () => {
     return (
-        <Navigation />
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
     );
 };
 
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<Index />, rootElement);

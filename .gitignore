@@ -6,3 +6,4 @@ package-lock.json
 # jetbrains
 .idea
 LICENSE
+__snapshots__
