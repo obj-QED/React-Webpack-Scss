@@ -75,7 +75,7 @@ const HomePage = () => {
         <InfoHeading
           classWrapper="mb-17 text-center"
           badge="Payment Feature"
-          title="Managing payments"
+          title="Export activity log"
           descrpt="Make or request payments with a single click from within your ERP."
         />
         <Tabs items={tabDataTwo} mode='default' />
