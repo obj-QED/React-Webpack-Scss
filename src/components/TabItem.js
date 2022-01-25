@@ -18,7 +18,6 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     const videoRef = React.createRef(null);
     const changeProgress = (videoRef) => {
         const ch = videoProgress;
-        console.log(setVideoProgress);
         if (videoRef.current !== null) {
             ch["n" + active] = (+videoRef.current.getCurrentTime() / +videoRef.current.getDuration());
             setVideoProgress(ch);
@@ -32,7 +31,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     const playVideo = (videoRef) => {
         videoRef.current.seekTo(videoProgress["n" + active], 'fraction');
     }
-    
+
     return (
         <div className="tab-content w-10/12 mx-auto">
             <div className="data w-full h-full">
@@ -40,7 +39,7 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
                     <ReactPlayer ref={videoRef}
                         className='react-player'
                         onPlay={() => { playVideo(videoRef) }}
-                        url={ video.url }
+                        url={video.url}
                         width={'100%'}
                         height={'100%'}
                         playing={playing}
@@ -68,24 +67,29 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
     )
 };
 
-const tabItems = ({ items , mode, className }) => {
+const tabItems = ({ items, mode, className }) => {
     const [isReady, setIsReady] = useState(false);
-    // const [isLoading, setIsLoading] = useState(false);
-    
+    const [isLoading, setIsLoading] = useState(false);
+    const [video, setVideo] = useState(null);
+    // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         items.forEach(item => {
-        // if (items.length > 0 && !isReady) {
+            if (items.length > 0 && !video) {
+                // if (item.video && item.video.url)
+                // setIsLoading(true);
                 fetch(item.video.url)
                     .then(res => res.blob())
                     .then(blob => {
-                        item.video.url  = URL.createObjectURL(blob);
+                        item.video.url = URL.createObjectURL(blob);
                         setIsReady(true);
+                        setVideo(item.video);
                     })
-                // }
-            })
+                setIsLoading(true);
+            }
+        })
     }, [items]);
-   
+
     let createProgressState = () => {
         let obj = {};
         for (let i = 0; i < items.length; i++) {
@@ -123,11 +127,11 @@ const tabItems = ({ items , mode, className }) => {
     return (
         <div className="tab">
             <div className={classNames('tab-heading mb-20',
-            className,
-            {
-                'grid grid-cols-4 gap-5': mode === 'default',
-                'center-mode': mode === 'center-mode',
-            }
+                className,
+                {
+                    'grid grid-cols-4 gap-5': mode === 'default',
+                    'center-mode': mode === 'center-mode',
+                }
             )}>
 
                 {items.map((item, index) => {
@@ -169,7 +173,7 @@ const tabItems = ({ items , mode, className }) => {
 
                                             {/* Reload */}
                                             {videoProgress[`n${index}`] == 1 &&
-                                                <img onClick={() => { let obj = videoProgress; obj["n" + index] = 0; setVideoProgress({ ...obj }); setTimeout(pauseClick, 0); } } src="../assets/icons/tabs/Repeat.svg" data-index={index} />}
+                                                <img onClick={() => { let obj = videoProgress; obj["n" + index] = 0; setVideoProgress({ ...obj }); setTimeout(pauseClick, 0); }} src="../assets/icons/tabs/Repeat.svg" data-index={index} />}
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +206,7 @@ const tabItems = ({ items , mode, className }) => {
                                 <div className="subtitle" data-index={index}>{item.subtitle}</div>
                                 <div className={`progressbar-block ${playing && index == active ? 'playing' : ''}`} data-index={index}>
                                     {index === active && // ALERT: This is the only way to make the progressbar work properly
-                                        <ProgressBar done={currentProgress} /> 
+                                        <ProgressBar done={currentProgress} />
                                         // FIX: loading fast, need to fix it slow loading progressbar
                                     }
                                 </div>

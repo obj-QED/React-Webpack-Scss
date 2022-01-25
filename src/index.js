@@ -1,13 +1,7 @@
-import React from "react";
-import { render } from "react-dom";
+// import React from "react";
+import ReactDOM from 'react-dom';
 
 // PAGE
 import Navigation from "./components/Navigation";
 
-const IndexPage = () => (
-    <React.Fragment>
-    <Navigation />
-    </React.Fragment>
-);
-
-render(<IndexPage />, document.getElementById("root"));
+ReactDOM.render(<Navigation />, document.getElementById('root'));

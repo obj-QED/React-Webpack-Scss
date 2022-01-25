@@ -23,8 +23,6 @@ import { tabDataTwo } from "../../utils/content";
 import { tabDataThree } from "../../utils/content";
 import Footer from "../../components/Footer";
 
-// upload home
-
 const HomePage = () => {
 
   return (
@@ -71,7 +69,7 @@ const HomePage = () => {
           title="Making payments"
           descrpt="Make or request payments with a single click from within your ERP."
         />
-        <Tabs items={tabData} mode='default'/>
+        <Tabs items={tabData} mode='default' />
       </section>
       <section className="demonstration my-21">
         <InfoHeading
@@ -80,7 +78,7 @@ const HomePage = () => {
           title="Managing payments"
           descrpt="Make or request payments with a single click from within your ERP."
         />
-        <Tabs items={tabDataTwo} mode='default'/>
+        <Tabs items={tabDataTwo} mode='default' />
       </section>
       <section className="demonstration my-21">
         <InfoHeading
@@ -89,7 +87,7 @@ const HomePage = () => {
           title="Payment flexibility"
           descrpt="Make or request payments with a single click from within your ERP."
         />
-        <Tabs items={tabDataThree} mode='center-mode'/>
+        <Tabs items={tabDataThree} mode='center-mode' />
       </section>
       <section className="integration my-21">
         <InfoHeading
