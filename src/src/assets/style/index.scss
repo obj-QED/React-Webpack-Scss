@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    --bg-color-body: #111827;
+    font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background-color: var(--bg-color-body, #111827);
+    @apply text-white overflow-x-hidden;
+}
+section {
+    @apply py-15;
+    .column {
+        @apply md:px-2.5;
+    }
+}
+
+.hero {
+    @apply relative;
+    &__content {
+        .title {
+            @apply text-6xl leading-none font-extrabold;
+        }
+        .text {
+            @apply text-gray-300 text-base leading-6 font-medium;
+        }
+    }
+    .scroll-down {
+        .text {
+            @apply text-xs leading-5 font-semibold uppercase;
+        }
+    }
+}
+
+.heading {
+    .badge {
+        @apply w-max mx-auto;
+        background: #27314b;
+        border-radius: 50px;
+        .text {
+            @apply text-sm leading-5 font-medium py-1 px-3 block;
+            color: #97b1fe;
+        }
+    }
+    .title {
+        @apply text-4xl leading-10 font-extrabold;
+    }
+    .description {
+        @apply text-gray-300 text-base leading-6 font-medium;
+    }
+}
+
+.logo {
+    p {
+        @apply text-base leading-6 font-medium;
+    }
+}
