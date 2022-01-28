@@ -1,4 +1,4 @@
-#reactHubspotForm1 {
+#reactHubspotForm1, #reactHubspotForm0 {
     height: 48px;
     position: absolute;
     bottom: 100px;
@@ -25,7 +25,6 @@
 }
 .api-form {
     animation: show-from-right 0.8s cubic-bezier(0.5, 0, 0.5, 1);
-    @apply w-full flex justify-between items-center;
     .hs_email {
         width: 100%;
         margin-right: 0.75rem;
@@ -33,10 +32,8 @@
         .hs-input {
             padding: 12px 16px;
             height: 48px;
-            @apply text-base leading-6 font-normal text-gray-500 bg-white rounded-md w-full;
         }
         .hs-input:placeholder {
-            @apply text-gray-500;
         }
     }
     .hs_submit {
@@ -49,7 +46,6 @@
             font-weight: 500;
             font-size: 16px;
             line-height: 24px;
-            @apply rounded-md bg-blue-600;
         }
     }
 }
