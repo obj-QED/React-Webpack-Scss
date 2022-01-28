@@ -1,53 +1,58 @@
-#reactHubspotForm1, #reactHubspotForm0 {
-    height: 48px;
-    position: absolute;
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 520px;
     bottom: 100px;
     left: auto;
+    position: absolute;
     width: 100%;
-    max-width: 520px;
-    form {
-        position: relative;
-        .hs-error-msgs {
-            position: absolute;
-            top: 114%;
-            left: auto;
-            right: auto;
-            color: #e04e27;
-            font-size: 13px;
-            font-weight: 500;
-            line-height: 128.5%;
-            list-style: none;
-            pointer-events: none;
-            padding: 0;
-            margin: 0;
-        }
-    }
-}
-.api-form {
+    border: 0;
+    outline: none;
     animation: show-from-right 0.8s cubic-bezier(0.5, 0, 0.5, 1);
+    input {
+        border: 0;
+        border-radius: 6px !important;
+        padding: 12px 16px !important;
+        width: 100%;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+    }
     .hs_email {
         width: 100%;
-        margin-right: 0.75rem;
-        height: 48px;
-        .hs-input {
-            padding: 12px 16px;
-            height: 48px;
-        }
-        .hs-input:placeholder {
-        }
+        margin-right: 12px;
+        color: #6b7280;
     }
-    .hs_submit {
-        height: 48px;
+    .actions {
         input {
             cursor: pointer;
+            background: #2563eb;
             box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
-            padding: 12px 16px;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
         }
     }
+
+    .hs-error-msgs label,
+    .hs-error-msgs input {
+        position: absolute;
+        bottom: -26px;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        color: red;
+    }
+}
+.submitted-message {
+    margin-top: 52px;
+    margin-bottom: -76px;
+    color: #16a34a;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 @-webkit-keyframes show-from-right {
@@ -62,14 +67,4 @@
         transform: translateX(0px);
         opacity: 1;
     }
-}
-
-.submitted-message {
-    margin-top: 12px;
-    color: #16a34a;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
 }
