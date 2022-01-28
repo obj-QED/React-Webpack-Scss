@@ -1,23 +1,79 @@
-.home {
-    .form {
-        &-group, .btn-submit {
-            max-height: 48px;
+#reactHubspotForm1 {
+    height: 48px;
+    position: absolute;
+    bottom: 100px;
+    left: auto;
+    width: 100%;
+    max-width: 520px;
+    form {
+        position: relative;
+        .hs-error-msgs {
+            position: absolute;
+            top: 114%;
+            left: auto;
+            right: auto;
+            color: #e04e27;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 128.5%;
+            list-style: none;
+            pointer-events: none;
+            padding: 0;
+            margin: 0;
         }
     }
 }
-.form {
-    &-group {
-        .control {
-            @apply text-gray-800 rounded-md text-base leading-6 font-normal placeholder-gray-500;
+.api-form {
+    animation: show-from-right 0.8s cubic-bezier(0.5, 0, 0.5, 1);
+    @apply w-full flex justify-between items-center;
+    .hs_email {
+        width: 100%;
+        margin-right: 0.75rem;
+        height: 48px;
+        .hs-input {
+            padding: 12px 16px;
+            height: 48px;
+            @apply text-base leading-6 font-normal text-gray-500 bg-white rounded-md w-full;
+        }
+        .hs-input:placeholder {
+            @apply text-gray-500;
         }
     }
-    > .formErrors {
-        display: none;
+    .hs_submit {
+        height: 48px;
+        input {
+            cursor: pointer;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+            padding: 12px 16px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            @apply rounded-md bg-blue-600;
+        }
     }
-    .alert-success {
-        @apply text-green-600 text-base font-medium leading-5 mt-2
+}
+
+@-webkit-keyframes show-from-right {
+    from {
+        -webkit-transform: translateX(200px);
+        transform: translateX(200px);
+        opacity: 0;
     }
-    .btn-submit {
-        @apply text-base leading-6 font-medium bg-blue-600 shadow rounded-md;
+
+    to {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+        opacity: 1;
     }
+}
+
+.submitted-message {
+    margin-top: 12px;
+    color: #16a34a;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
 }

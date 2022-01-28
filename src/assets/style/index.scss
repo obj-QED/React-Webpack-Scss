@@ -11,7 +11,7 @@ body {
 section {
     @apply py-15;
     .column {
-        @apply md:px-2.5;
+        @apply md:px-1.5;
     }
 }
 
@@ -26,6 +26,7 @@ section {
         }
     }
     .scroll-down {
+        margin-top: 156px;
         .text {
             @apply text-xs leading-5 font-semibold uppercase;
         }

@@ -12,7 +12,7 @@ import ImageVideo from "../../assets/images/hero-video.png";
 
 // Component
 import InfoHeading from '../../components/InfoHeading';
-import SubscibeFrom from "../../components/SubcribeForm";
+import ApiHubspotForm from '../../components/ApiHubspotForm';
 import Tabs from "../../components/TabItem";
 import SlickSlider from '../../components/SlickSlider';
 import Cta from '../../components/Cta';
@@ -29,7 +29,7 @@ const HomePage = () => {
     <React.Fragment>
       <section className="hero mt-24">
         <div className="flex justify-between flex-row items-center">
-          <div className="w-5/12 column">
+          <div className="w-5/12 column relative">
             <div className="logo mb-8 w-max">
               <Link
                 to="/"
@@ -39,7 +39,7 @@ const HomePage = () => {
                 <p className="ml-3 uppercase">Smart hub</p>
               </Link>
             </div>
-            <div className="hero__content mb-10">
+            <div className="hero__content">
               <h1 className="title pb-5">
                 A feature-rich embedded
                 <span className="text-blueCustom-100"> payment portal</span>
@@ -48,6 +48,7 @@ const HomePage = () => {
                 See how SMART Hub works and discover the features that enable any business make and receive payments from a single place.
               </p>
             </div>
+            <ApiHubspotForm />
             <div className="scroll-down inline-flex items-center">
               <span className="text">
                 Scroll down for features
