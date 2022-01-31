@@ -9,8 +9,8 @@ const HubspotContactForm = () => {
       cssClass='api-form'
       cssRequired='api-form-required'
       portalId='885542'
-      onSubmit={() =>{
-          console.log('Submittes')
+      onSubmit={() => {
+        console.log('Submittes')
       }}
       css=''
       formId='79a19461-e720-4cf1-a632-1528022454a8'
@@ -27,4 +27,4 @@ const HubspotContactForm = () => {
   )
 }
 
-export default HubspotContactForm
+export default HubspotContactForm;

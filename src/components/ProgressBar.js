@@ -7,7 +7,7 @@ export default function Progressbar({ done }) {
         className={'progressbar-done h-full'}
         style={{
           width: `${done}%`,
-          transition: `2.2s width ease`
+          transition: `2.2s width ease`,
         }}
       ></div>
     </div>

@@ -11,4 +11,4 @@ const Slide = ({ item }) => {
         </div>
   )
 }
-export default Slide
+export default Slide;

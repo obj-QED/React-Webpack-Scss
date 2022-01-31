@@ -26,19 +26,20 @@
             height: 40px;
             padding: 4px;
             .check {
-                color: #0C111B
+                color: #0c111b;
             }
             .uncheck {
-                @apply text-gray-400
+                @apply text-gray-400;
             }
-            .check, .uncheck {
+            .check,
+            .uncheck {
                 transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
                 padding: 6px 14px;
                 width: 50%;
                 span {
                     z-index: 50;
                     position: relative;
-                    @apply text-sm leading-5 font-medium block text-center
+                    @apply text-sm leading-5 font-medium block text-center;
                 }
             }
         }
@@ -69,14 +70,13 @@
             .wrg-toggle {
                 &__circle {
                     left: calc(100% - 84px);
-                
                 }
             }
             .check {
-                @apply text-gray-400
+                @apply text-gray-400;
             }
             .uncheck {
-                    color: #0C111B
+                color: #0c111b;
             }
         }
     }

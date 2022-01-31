@@ -14,7 +14,7 @@ import ToggleButton from './ToggleButton'
 import { integrationSlides } from '../utils/content'
 
 export default function SlickSlider() {
-  const [sliderRef, setSliderRef] = useState(null);
+  const [sliderRef, setSliderRef] = useState(null)
 
   const sliderSettings = {
     arrows: true,
@@ -24,7 +24,7 @@ export default function SlickSlider() {
     slidesToShow: 6,
     slidesToScroll: 1,
     centerPadding: '20px',
-        responsive: [
+    responsive: [
       {
         breakpoint: 1024,
         settings: {
@@ -55,14 +55,8 @@ export default function SlickSlider() {
   const [data, setData] = useState(integrationSlides.banks)
 
   const toggleData = () => {
-    setData(
-      data === integrationSlides.banks
-        ? integrationSlides.erps
-        : integrationSlides.banks
-    )
+    setData(data === integrationSlides.banks ? integrationSlides.erps : integrationSlides.banks)
   }
-
-  
 
   return (
     <div className='carousel'>
@@ -70,13 +64,9 @@ export default function SlickSlider() {
         <ToggleButton onChange={toggleData} defaultChecked={false} />
       </div>
       <div className='slider my-15'>
-        <Slider
-          ref={sliderRef}
-          {...sliderSettings}
-        >
+        <Slider ref={sliderRef} {...sliderSettings}>
           {data.map((item, index) => (
-            <SlideItems key={index} item={item}>
-            </SlideItems>
+            <SlideItems key={index} item={item}></SlideItems>
           ))}
         </Slider>
       </div>

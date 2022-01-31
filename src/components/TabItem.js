@@ -27,12 +27,11 @@ const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlayin
 
       ch['n' + active] = currentTime / duration
       setVideoProgress(ch)
-      setCurrentProgress((currentTime / duration) * 100);
+      setCurrentProgress((currentTime / duration) * 100)
       if (videoProgress['n' + active] == 1) {
         setPlaying(false)
       }
     }
-
   }
   const playVideo = (videoRef) => {
     videoRef.current.seekTo(videoProgress['n' + active], 'seconds')
@@ -208,11 +207,7 @@ const tabItems = ({ items, mode, className }) => {
                   {item.subtitle}
                 </div>
                 <div className={`progressbar-block ${playing && index == active ? 'playing' : ''}`} data-index={index}>
-                  {
-                    index === active && (
-                      <ProgressBar done={currentProgress} />
-                    )
-                  }
+                  {index === active && <ProgressBar done={currentProgress} />}
                 </div>
               </div>
             </div>
@@ -235,4 +230,4 @@ const tabItems = ({ items, mode, className }) => {
   )
 }
 
-export default tabItems
+export default tabItems;
