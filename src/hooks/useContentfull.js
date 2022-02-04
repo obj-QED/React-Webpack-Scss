@@ -1,24 +1,36 @@
-import { createClient } from 'contentful';
+import { createClient } from "contentful";
 
-const useContentfull = () => {
-    createClient({
-        space: 'na3y4142qh9d',
-        accessToken: 'xi3jOfLzUCLGE6HyVnu4rv1Etdj0L3Te7AFqJzcZ-7Y',
-        host: 'cdn.contentful.com',
+const useContentful = () => {
+  const client = createClient({
+    space: "na3y4142qh9d",
+    accessToken: "AUMO_LlCqb84DDfyW3lOb3Wt896QYwq2tSeo8JeLr5Y",
+    host: "cdn.contentful.com"
+  });
+
+  const getBanner = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "banner",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+          const logoUrl = item.fields.logoImage.fields.file.url;
+          const bannerImage = item.fields.bannerImage.fields.file.url;
+
+        return {
+            ...item.fields,
+            logoUrl,
+            bannerImage
+        };
     });
-    const getBanner = async() => {
-        try {
-            const entries = await client.getEntries({
-                content_type: 'banner',
-                select: 'fields',
-                order: 'fields.name',
-            });
-            return entries;
-         } catch (error) {
-                console.log(`Print error ${error}`);
-            }
-    };
-    return { getBanner };
+    
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching authors ${error}`);
+    }
+  };
+
+  return { getBanner };
 };
 
-export default useContentfull;
+export default useContentful;

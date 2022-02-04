@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM, { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../assets/style/index.scss';
 
 // Image & Icon
-import Logo from '../../assets/icons/logo.svg';
 import ScrollDown from '../../assets/icons/homepage/mouse.svg';
-import ImageVideo from '../../assets/images/hero-video.png';
 
 // Component
 import InfoHeading from '../../components/InfoHeading';
@@ -23,46 +21,74 @@ import { tabDataTwo } from '../../utils/content';
 import { tabDataThree } from '../../utils/content';
 import Footer from '../../components/Footer';
 
-import useContentfull from '../../hooks/useContentfull';
+import useContentful from '../../hooks/useContentfull';
 
 const HomePage = () => {
-  const [banner, setBanner] = useState([]);
-  const { getBanner } = useContentfull();
-  
+  const [isBanner, setBanner] = useState([]);
+  const {
+    getBanner,
+    //  getTab1,
+    //  getTab2,
+    //  getTab3,
+    //  getSlider,
+    //  getCta,
+    //  getFooter
+  } = useContentful();
+
   useEffect(() => {
-    getBanner().then((response) => console.log(response));
+    getBanner().then((response) => response && setBanner(response));
+    // getTab1().then((response) => response && setBanner(response));
+    // getTab2().then((response) => response && setBanner(response));
+    // getTab3().then((response) => response && setBanner(response));
+    // getSlider().then((response) => response && setBanner(response));
+    // getCta().then((response) => response && setBanner(response));
+    // getFooter().then((response) => response && setBanner(response));
   });
+
+  console.log(isBanner.map((item) => item));
 
   return (
     <React.Fragment>
       <section className='hero mt-24'>
-        <div className='flex justify-between flex-row items-center'>
-          <div className='w-5/12 column relative'>
-            <div className='logo mb-8 w-max'>
-              <Link to='/' className='logo__link flex items-center'>
-                <Logo alt='logo' />
-                <p className='ml-3 uppercase'>Smart hub</p>
-              </Link>
+        {isBanner.map((item, index) => (
+          <div
+            className='flex justify-between flex-row items-center'
+            key={index}
+          >
+            <div className='w-5/12 column relative'>
+              <div className='logo mb-8 w-max'>
+                <Link to='/' className='logo__link flex items-center'>
+                  <img src={item.logoUrl} alt={item.logoImage.fields.title} />
+                  <p className='ml-3 uppercase'>Smart hub</p>
+                </Link>
+              </div>
+              <div className='hero__content'>
+                <h1 className='title pb-5'>
+                  {item.title}
+                  <span className='text-blueCustom-100'>
+                    {' '}
+                    {item.titleColor}
+                  </span>
+                </h1>
+                <p className='text'>{item.description}</p>
+              </div>
+              <ApiHubspotForm />
+              <div className='scroll-down inline-flex items-center'>
+                <span className='text'>{item.scrollText}</span>
+                <span>
+                  <ScrollDown className='icon ml-3' />
+                </span>
+              </div>
             </div>
-            <div className='hero__content'>
-              <h1 className='title pb-5'>
-                A feature-rich embedded
-                <span className='text-blueCustom-100'> payment portal</span>
-              </h1>
-              <p className='text'>See how SMART Hub works and discover the features that enable any business make and receive payments from a single place.</p>
-            </div>
-            <ApiHubspotForm />
-            <div className='scroll-down inline-flex items-center'>
-              <span className='text'>Scroll down for features</span>
-              <span>
-                <ScrollDown className='icon ml-3' />
-              </span>
+            <div className='w-7/12 column'>
+              <img
+                src={item.bannerImage}
+                // alt={ item.bannerImage.fields.title }
+                style={{ position: 'absolute', top: 0, right: 'auto' }}
+              />
             </div>
           </div>
-          <div className='w-7/12 column'>
-            <img src={ImageVideo} style={{ position: 'absolute', top: 0, right: 'auto' }} />
-          </div>
-        </div>
+        ))}
       </section>
       <section className='demonstration my-21'>
         <InfoHeading
@@ -94,7 +120,9 @@ const HomePage = () => {
       <section className='integration my-21'>
         <InfoHeading
           title={'Seamless integration and payments connectivity'}
-          descrpt={'SMART Hub can be embedded in the following ERPs and integrated with accounts from these banks:'}
+          descrpt={
+            'SMART Hub can be embedded in the following ERPs and integrated with accounts from these banks:'
+          }
           classWrapper={'mb-17 w-6/12 mx-auto text-center'}
         />
         <SlickSlider />
@@ -106,6 +134,6 @@ const HomePage = () => {
         <Footer />
       </section>
     </React.Fragment>
-  )
-}
+  );
+};
 export default HomePage;
