@@ -1,29 +1,38 @@
-import React from 'react'
-import ReactDOM, { render } from 'react-dom'
-import { Link } from 'react-router-dom'
+import React, {useEffect, useState } from 'react';
+import ReactDOM, { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 
 // STYLE
-import '../../assets/style/index.scss'
+import '../../assets/style/index.scss';
 
 // Image & Icon
-import Logo from '../../assets/icons/logo.svg'
-import ScrollDown from '../../assets/icons/homepage/mouse.svg'
-import ImageVideo from '../../assets/images/hero-video.png'
+import Logo from '../../assets/icons/logo.svg';
+import ScrollDown from '../../assets/icons/homepage/mouse.svg';
+import ImageVideo from '../../assets/images/hero-video.png';
 
 // Component
-import InfoHeading from '../../components/InfoHeading'
-import ApiHubspotForm from '../../components/ApiHubspotForm'
-import Tabs from '../../components/TabItem'
-import SlickSlider from '../../components/SlickSlider'
-import Cta from '../../components/Cta'
+import InfoHeading from '../../components/InfoHeading';
+import ApiHubspotForm from '../../components/ApiHubspotForm';
+import Tabs from '../../components/TabItem';
+import SlickSlider from '../../components/SlickSlider';
+import Cta from '../../components/Cta';
 
 // Data components
-import { tabData } from '../../utils/content'
-import { tabDataTwo } from '../../utils/content'
-import { tabDataThree } from '../../utils/content'
-import Footer from '../../components/Footer'
+import { tabData } from '../../utils/content';
+import { tabDataTwo } from '../../utils/content';
+import { tabDataThree } from '../../utils/content';
+import Footer from '../../components/Footer';
+
+import useContentfull from '../../hooks/useContentfull';
 
 const HomePage = () => {
+  const [banner, setBanner] = useState([]);
+  const { getBanner } = useContentfull();
+  
+  useEffect(() => {
+    getBanner().then((response) => console.log(response));
+  });
+
   return (
     <React.Fragment>
       <section className='hero mt-24'>
