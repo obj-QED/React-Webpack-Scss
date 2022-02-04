@@ -106,7 +106,7 @@ export const integrationSlides = {
     },
     {
       logo: 'banks/white-4',
-      title: 'JP Morgan',
+      title: 'Bank of America',
       hover: '/banks/color-4',
     },
     {
@@ -116,12 +116,12 @@ export const integrationSlides = {
     },
     {
       logo: 'banks/white-6',
-      title: 'US Bank',
+      title: 'JP Morgan',
       hover: '/banks/color-6',
     },
     {
       logo: 'banks/white-7',
-      title: 'Bank of America',
+      title: 'US Bank',
       hover: '/banks/color-7',
     },
   ],
@@ -148,7 +148,7 @@ export const integrationSlides = {
     },
     {
       logo: '/erp/white-5',
-      title: 'Quidewire',
+      title: 'Guidewire',
       hover: '/erp/color-5',
     },
     {
