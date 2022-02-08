@@ -31,7 +31,7 @@ export const tabData = [
       url: '../assets/video/four.mp4',
     },
   },
-]
+];
 
 export const tabDataTwo = [
   {
@@ -66,7 +66,7 @@ export const tabDataTwo = [
       url: '../assets/video/eith.mp4',
     },
   },
-]
+];
 
 export const tabDataThree = [
   {
@@ -85,7 +85,7 @@ export const tabDataThree = [
       url: '../assets/video/then.mp4',
     },
   },
-]
+];
 
 export const integrationSlides = {
   banks: [
@@ -167,4 +167,4 @@ export const integrationSlides = {
       hover: '/erp/color-8',
     },
   ],
-}
+};

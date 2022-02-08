@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class InfoHeading extends React.Component {
+
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       classWrapper: this.props.classWrapper,
       title: this.props.title,
       badge: this.props.badge,
       descrpt: this.props.descrpt,
-    }
+    };
   }
 
   render() {

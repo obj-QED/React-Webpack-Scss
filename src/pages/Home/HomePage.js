@@ -25,28 +25,15 @@ import useContentful from '../../hooks/useContentfull';
 
 const HomePage = () => {
   const [isBanner, setBanner] = useState([]);
-  const {
-    getBanner,
-    //  getTab1,
-    //  getTab2,
-    //  getTab3,
-    //  getSlider,
-    //  getCta,
-    //  getFooter
-  } = useContentful();
+  const [isTab1, setTab1] = useState([]);
+
+  const { getBanner, getDemonstration1 } = useContentful();
 
   useEffect(() => {
     getBanner().then((response) => response && setBanner(response));
-    // getTab1().then((response) => response && setBanner(response));
-    // getTab2().then((response) => response && setBanner(response));
-    // getTab3().then((response) => response && setBanner(response));
-    // getSlider().then((response) => response && setBanner(response));
-    // getCta().then((response) => response && setBanner(response));
-    // getFooter().then((response) => response && setBanner(response));
+    getDemonstration1().then((response) => response && setTab1(response));
   });
-
-  console.log(isBanner.map((item) => item));
-
+  
   return (
     <React.Fragment>
       <section className='hero mt-24'>
@@ -92,6 +79,7 @@ const HomePage = () => {
       </section>
       <section className='demonstration my-21'>
         <InfoHeading
+          // 'Payment Feature'
           classWrapper='mb-17 text-center'
           badge='Payment Feature'
           title='Making payments'

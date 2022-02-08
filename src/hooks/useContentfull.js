@@ -30,7 +30,26 @@ const useContentful = () => {
     }
   };
 
-  return { getBanner };
+  const getDemonstration1 = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "tabContent2",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+        // console.log(item.fields.badge);
+        return {
+            ...item.fields,
+        };
+    });
+    
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching authors ${error}`);
+    }
+  };
+
+  return { getBanner, getDemonstration1 };
 };
 
 export default useContentful;
