@@ -1,109 +1,126 @@
-import React, { useState, useEffect, useRef } from 'react'
-import ReactPlayer from 'react-player/lazy'
-import classNames from 'classnames'
+import React, { useState, useEffect, useRef } from 'react';
+import ReactPlayer from 'react-player/lazy';
+import classNames from 'classnames';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
-import ProgressBar from './ProgressBar'
+
+import ProgressBar from './ProgressBar';
 
 // Style
-import '../assets/style/tabs.scss'
+import '../assets/style/tabs.scss';
 
-const TabContent = ({ defaultItem, playing, video, setCurrentProgress, setPlaying, active, videoProgress, setVideoProgress }) => {
+const TabContent = ({
+  defaultItem,
+  playing,
+  video,
+  setCurrentProgress,
+  setPlaying,
+  active,
+  videoProgress,
+  setVideoProgress,
+}) => {
   if (active === null) {
-    active = 0
-    video = defaultItem.video
+    active = 0;
+    video = defaultItem.video;
   }
 
-  const videoRef = React.createRef(null)
+  const videoRef = React.createRef(null);
 
   const changeProgress = (videoRef) => {
     // сделай changeProgress при изменении прогресса видео по микросекундам
-    const ch = videoProgress
+    const ch = videoProgress;
     if (videoRef.current !== null) {
-      const currentTime = videoRef.current.getCurrentTime()
-      const duration = videoRef.current.getDuration()
+      const currentTime = videoRef.current.getCurrentTime();
+      const duration = videoRef.current.getDuration();
       // const seek = videoRef.current.seekTo()
 
       // console.log(seek)
 
-      ch['n' + active] = currentTime / duration
-      setVideoProgress(ch)
-      setCurrentProgress((currentTime / duration) * 100)
+      ch['n' + active] = currentTime / duration;
+      setVideoProgress(ch);
+      setCurrentProgress((currentTime / duration) * 100);
       if (videoProgress['n' + active] == 1) {
-        setPlaying(false)
+        setPlaying(false);
       }
     }
-  }
+  };
   const playVideo = (videoRef) => {
-    videoRef.current.seekTo(videoProgress['n' + active], 'seconds')
-  }
+    videoRef.current.seekTo(videoProgress['n' + active], 'seconds');
+  };
 
   return (
-    <div className='tab-content w-10/12 mx-auto'>
-      <div className='data w-full h-full'>
-        {video && (
-          <ReactPlayer
-            ref={videoRef}
-            className='react-player'
-            onPlay={() => {
-              playVideo(videoRef)
-            }}
-            url={video.url}
-            width={'100%'}
-            height={'100%'}
-            playing={playing}
-            muted={true}
-            onProgress={() => changeProgress(videoRef)}
-            onContextMenu={(e) => e.preventDefault()}
-            config={{
-              file: {
-                attributes: { preload: 'auto', crossOrigin: 'anonymous' },
-              },
-            }}
-          />
-        )}
+    <LazyLoadComponent>
+      <div className='tab-content w-10/12 mx-auto'>
+        <div className='data w-full h-full'>
+          {video && (
+            <ReactPlayer
+              ref={videoRef}
+              className='react-player'
+              onPlay={() => {
+                playVideo(videoRef);
+              }}
+              url={video.url}
+              width={'100%'}
+              height={'100%'}
+              playing={playing}
+              muted={true}
+              onProgress={() => changeProgress(videoRef)}
+              onContextMenu={(e) => e.preventDefault()}
+              config={{
+                file: {
+                  attributes: { preload: 'auto', crossOrigin: 'anonymous' },
+                },
+              }}
+            />
+          )}
+        </div>
       </div>
-    </div>
-  )
-}
+    </LazyLoadComponent>
+  );
+};
 
 const tabItems = ({ items, mode, className }) => {
-  const [isReady, setIsReady] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [video, setVideo] = useState(null)
+  const [isReady, setIsReady] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [video, setVideo] = useState(null);
 
   let createProgressState = () => {
-    let obj = {}
+    let obj = {};
     for (let i = 0; i < items.length; i++) {
-      obj['n' + i] = 0
+      obj['n' + i] = 0;
     }
-    return obj
-  }
+    return obj;
+  };
 
-  const [videoProgress, setVideoProgress] = React.useState(createProgressState())
-  const [currentProgress, setCurrentProgress] = React.useState(null)
-  const [active, setActive] = React.useState(null)
-  const [hover, setHover] = React.useState()
-  const [playing, setPlaying] = React.useState(false)
+  const [videoProgress, setVideoProgress] = React.useState(
+    createProgressState(),
+  );
+  const [currentProgress, setCurrentProgress] = React.useState(null);
+  const [active, setActive] = React.useState(null);
+  const [hover, setHover] = React.useState();
+  const [playing, setPlaying] = React.useState(false);
 
   const openTab = (e) => {
     if (+e.target.dataset.index !== active) {
-      setPlaying(true)
+      setPlaying(true);
     }
-    setCurrentProgress(videoProgress[e.target.dataset.index])
-    setActive(+e.target.dataset.index)
-  }
+    setCurrentProgress(videoProgress[e.target.dataset.index]);
+    setActive(+e.target.dataset.index);
+  };
 
   const mEnter = (e) => {
-    setHover(+e.target.dataset.index)
-  }
+    setHover(+e.target.dataset.index);
+  };
 
   const mLeave = () => {
-    setHover()
-  }
+    setHover();
+  };
 
   const pauseClick = () => {
-    setPlaying(!playing)
-  }
+    setPlaying(!playing);
+  };
 
   useState(() => {
     items.forEach((item) => {
@@ -111,14 +128,14 @@ const tabItems = ({ items, mode, className }) => {
         fetch(item.video.url)
           .then((res) => res.blob())
           .then((blob) => {
-            item.video.url = URL.createObjectURL(blob)
-            setIsReady(true)
-            setVideo(item.video)
-          })
-        setIsLoading(true)
+            item.video.url = URL.createObjectURL(blob);
+            setIsReady(true);
+            setVideo(item.video);
+          });
+        setIsLoading(true);
       }
-    })
-  }, [items])
+    });
+  }, [items]);
   return (
     <div className='tab'>
       <div
@@ -133,7 +150,11 @@ const tabItems = ({ items, mode, className }) => {
               key={index}
               className={`item flex justify-between
 							${index === active ? 'active' : ''}
-							${index === hover || (index === active && playing) ? 'shadow-tab-head cursor-pointer border-blueCustom-200' : 'border-gray-800'}
+							${
+                index === hover || (index === active && playing)
+                  ? 'shadow-tab-head cursor-pointer border-blueCustom-200'
+                  : 'border-gray-800'
+              }
 							`}
               onClick={openTab}
               onMouseEnter={mEnter}
@@ -142,34 +163,62 @@ const tabItems = ({ items, mode, className }) => {
             >
               <div className='state' data-index={index}>
                 <div
-                  className={`state__icon cursor-pointer ${videoProgress['n' + index] != 1 && playing && index == active ? 'playing' : ''}`}
+                  className={`state__icon cursor-pointer ${
+                    videoProgress['n' + index] != 1 &&
+                    playing &&
+                    index == active
+                      ? 'playing'
+                      : ''
+                  }`}
                   data-index={index}
                 >
                   <div className='state__icon__overlay' data-index={index}>
                     <div className='icon' data-index={index}>
                       {/* Default Icon */}
                       {videoProgress['n' + index] != 1 && index != active && (
-                        <img src={index === hover ? '../assets/icons/tabs/Play.svg' : item.icon} data-index={index} />
+                        <LazyLoadImage
+                          effect='blur'
+                          src={
+                            index === hover
+                              ? '../assets/icons/tabs/Play.svg'
+                              : item.icon
+                          }
+                          data-index={index}
+                        />
                       )}
 
                       {/* Playing */}
-                      {videoProgress['n' + index] != 1 && playing && index == active && hover != index && (
-                        <img src='../assets/icons/tabs/Playing.svg' data-index={index} />
-                      )}
+                      {videoProgress['n' + index] != 1 &&
+                        playing &&
+                        index == active &&
+                        hover != index && (
+                          <LazyLoadImage
+                            effect='blur'
+                            src='../assets/icons/tabs/Playing.svg'
+                            data-index={index}
+                          />
+                        )}
 
                       {/* Playing Hover or Click */}
-                      {videoProgress['n' + index] != 1 && playing && index == active && hover == index && (
-                        <img src='../assets/icons/tabs/Playing.svg' data-index={index} />
-                      )}
+                      {videoProgress['n' + index] != 1 &&
+                        playing &&
+                        index == active &&
+                        hover == index && (
+                          <LazyLoadImage
+                            effect='blur'
+                            src='../assets/icons/tabs/Playing.svg'
+                            data-index={index}
+                          />
+                        )}
 
                       {/* Reload */}
                       {videoProgress[`n${index}`] == 1 && (
                         <img
                           onClick={() => {
-                            let obj = videoProgress
-                            obj['n' + index] = 0
-                            setVideoProgress({ ...obj })
-                            setTimeout(pauseClick, 0)
+                            let obj = videoProgress;
+                            obj['n' + index] = 0;
+                            setVideoProgress({ ...obj });
+                            setTimeout(pauseClick, 0);
                           }}
                           src='../assets/icons/tabs/Repeat.svg'
                           data-index={index}
@@ -180,7 +229,10 @@ const tabItems = ({ items, mode, className }) => {
                 </div>
                 {/* Hover */}
                 {videoProgress['n' + index] != 1 && index != active && (
-                  <span className={`video-text ${index === hover ? '' : 'hidden'}`} data-index={index}>
+                  <span
+                    className={`video-text ${index === hover ? '' : 'hidden'}`}
+                    data-index={index}
+                  >
                     Play
                   </span>
                 )}
@@ -206,12 +258,17 @@ const tabItems = ({ items, mode, className }) => {
                 <div className='subtitle' data-index={index}>
                   {item.subtitle}
                 </div>
-                <div className={`progressbar-block ${playing && index == active ? 'playing' : ''}`} data-index={index}>
+                <div
+                  className={`progressbar-block ${
+                    playing && index == active ? 'playing' : ''
+                  }`}
+                  data-index={index}
+                >
                   {index === active && <ProgressBar done={currentProgress} />}
                 </div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
       {
@@ -227,7 +284,7 @@ const tabItems = ({ items, mode, className }) => {
         />
       }
     </div>
-  )
-}
+  );
+};
 
 export default tabItems;

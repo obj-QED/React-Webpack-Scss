@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import InfoHeading from './InfoHeading'
 import { Button } from './Button'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // style
 import '../assets/style/cta.scss'
@@ -28,7 +30,7 @@ export default class Cta extends React.Component {
             </div>
           </div>
           <div className='w-6/12'>
-            <img src={HeroImage} alt='smart hub' />
+            <LazyLoadImage src={HeroImage} alt='smart hub' effect="blur"/>
           </div>
         </div>
       </div>

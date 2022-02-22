@@ -31,7 +31,7 @@ export const tabData = [
       url: '../assets/video/four.mp4',
     },
   },
-];
+]
 
 export const tabDataTwo = [
   {
@@ -42,14 +42,14 @@ export const tabDataTwo = [
       url: '../assets/video/five.mp4',
     },
   },
-  {
-    title: 'Sync payables',
-    subtitle: 'At any time synchronize the data from your connected accounting software or ERP.',
-    icon: '../assets/icons/tabs/sync.svg',
-    video: {
-      url: '../assets/video/six.mp4',
-    },
-  },
+  // {
+  //   title: 'Sync payables',
+  //   subtitle: 'At any time synchronize the data from your connected accounting software or ERP.',
+  //   icon: '../assets/icons/tabs/sync.svg',
+  //   video: {
+  //     url: '../assets/video/six.mp4',
+  //   },
+  // },
   {
     title: 'View past activity',
     subtitle: 'For each of your payables you can view the historic activity log.',
@@ -66,7 +66,7 @@ export const tabDataTwo = [
       url: '../assets/video/eith.mp4',
     },
   },
-];
+]
 
 export const tabDataThree = [
   {
@@ -85,7 +85,7 @@ export const tabDataThree = [
       url: '../assets/video/then.mp4',
     },
   },
-];
+]
 
 export const integrationSlides = {
   banks: [
@@ -167,4 +167,4 @@ export const integrationSlides = {
       hover: '/erp/color-8',
     },
   ],
-};
+}

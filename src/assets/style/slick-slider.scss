@@ -88,7 +88,9 @@
             min-height: 132px;
             background: #0c111b;
             @apply cursor-pointer relative;
+            .lazy-load-image-background,
             img {
+                min-width: max-content;
                 position: absolute;
                 top: 50%;
                 left: 50%;
