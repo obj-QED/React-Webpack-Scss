@@ -38,12 +38,6 @@ export default function SlickSlider() {
         },
       },
       {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
         breakpoint: 460,
         settings: {
           slidesToShow: 1,
@@ -63,7 +57,7 @@ export default function SlickSlider() {
       <div className='switch-button'>
         <ToggleButton onChange={toggleData} defaultChecked={false} />
       </div>
-      <div className='slider my-15'>
+      <div className='slider my-6 md:my-10 xl:my-15'>
         <Slider ref={sliderRef} {...sliderSettings}>
           {data.map((item, index) => (
             <SlideItems key={index} item={item}></SlideItems>

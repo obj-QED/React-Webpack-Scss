@@ -6,23 +6,24 @@
                 opacity: 1;
             }
         }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            z-index: 5;
-            display: flex;
-            width: 200px;
-            height: 100%;
-            top: 0;
-            font-size: 0;
-            background: linear-gradient(
-                var(--slider-arrow-gradient-deg, 90deg),
-                var(--bg-color-body) 0%,
-                rgba(0, 0, 0, 0) 100%
-            );
-            pointer-events: none;
+        @media (min-width: 768px) {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 5;
+                display: flex;
+                width: 200px;
+                height: 100%;
+                top: 0;
+                font-size: 0;
+                background: linear-gradient(
+                    var(--slider-arrow-gradient-deg, 90deg),
+                    var(--bg-color-body) 0%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                pointer-events: none;
+            }
         }
 
         &::before {

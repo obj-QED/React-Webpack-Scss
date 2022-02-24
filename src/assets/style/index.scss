@@ -9,7 +9,7 @@ body {
     @apply text-white overflow-x-hidden;
 }
 section {
-    @apply py-15;
+    @apply py-8 xl:py-15;
     .column {
         @apply md:px-1.5;
     }
@@ -19,14 +19,17 @@ section {
     @apply relative;
     &__content {
         .title {
-            @apply text-6xl leading-none font-extrabold;
+            @apply text-4xl md:text-6xl leading-none font-extrabold;
         }
         .text {
-            @apply text-gray-300 text-base leading-6 font-medium;
+            @apply text-gray-300 text-sm md:text-base leading-6 font-medium;
         }
     }
     .scroll-down {
         margin-top: 156px;
+        @media(max-width: 767px) {
+            margin-top: 2rem;
+        }
         .text {
             @apply text-xs leading-5 font-semibold uppercase;
         }
@@ -44,10 +47,10 @@ section {
         }
     }
     .title {
-        @apply text-4xl leading-10 font-extrabold;
+        @apply text-3xl md:text-4xl leading-7 md:leading-10 font-extrabold;
     }
     .description {
-        @apply text-gray-300 text-base leading-6 font-medium;
+        @apply text-gray-300 text-sm md:text-base leading-6 font-medium;
     }
 }
 

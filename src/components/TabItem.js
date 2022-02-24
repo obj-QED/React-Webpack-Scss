@@ -52,7 +52,7 @@ const TabContent = ({
 
   return (
     <LazyLoadComponent>
-      <div className='tab-content w-10/12 mx-auto'>
+      <div className='tab-content w-full lg:w-10/12 mx-auto'>
         <div className='data w-full h-full'>
           {video && (
             <ReactPlayer
@@ -139,8 +139,8 @@ const tabItems = ({ items, mode, className }) => {
   return (
     <div className='tab'>
       <div
-        className={classNames('tab-heading mb-20', className, {
-          'grid grid-cols-4 gap-5': mode === 'default',
+        className={classNames('tab-heading mb-6 lg:mb-20 overflow-x-scroll', className, {
+          'flex md:grid grid-cols-2 lg:grid-cols-4 gap-5': mode === 'default',
           'center-mode': mode === 'center-mode',
         })}
       >
@@ -148,7 +148,7 @@ const tabItems = ({ items, mode, className }) => {
           return (
             <div
               key={index}
-              className={`item flex justify-between
+              className={`item flex justify-between flex-nowrap mb-4 md:mb-0
 							${index === active ? 'active' : ''}
 							${
                 index === hover || (index === active && playing)

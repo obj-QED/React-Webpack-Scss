@@ -4,8 +4,11 @@
             cursor: default;
         }
         .item {
-            @apply border rounded-xlg p-6;
+            @apply border rounded-xlg p-4 md:p-6;
             background: #0c111b;
+            @media(max-width: 767px) {
+                min-width: 83.333333%;
+            }
             .state {
                 .video-text {
                     @apply text-blue-600 text-xxs font-medium leading-3 mt-2.5;
@@ -48,9 +51,12 @@
                     #0000001f 0px 19px 22px, #0000001a 0px 12px 14px, #00000017 0px 8px 9px, #00000012 0px 5px 5px,
                     #0000000d 0px 2px 2px;
                 padding-bottom: 60.265%;
+                @media(max-width: 767px) {
+                    padding-bottom: 70%;
+                }
             }
             video {
-                @apply absolute inset-0 w-full h-full object-cover bg-white;
+                @apply absolute inset-0 w-full h-full object-contain md:object-cover bg-white;
             }
         }
     }
@@ -141,8 +147,22 @@
     justify-content: center;
     margin-left: -10px;
     margin-right: -10px;
+    @media (max-width: 767px) {
+        justify-content: start;
+    }
     .item {
         width: calc(25% - 20px);
         margin: 0 10px;
+    }
+    @media(max-width: 1024px) {
+        .item {
+            width: calc(50% - 20px);
+        }
+    }
+    @media(max-width: 767px) {
+        .item {
+            margin-bottom: 1rem;
+            margin-left: 0;
+        }
     }
 }

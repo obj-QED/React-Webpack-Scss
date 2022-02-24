@@ -9,7 +9,15 @@ form {
     width: 100%;
     border: 0;
     outline: none;
-    animation: show-from-right 0.8s cubic-bezier(0.5, 0, 0.5, 1);
+    @media(min-width: 768px) {
+        animation: show-from-right 0.8s cubic-bezier(0.5, 0, 0.5, 1);
+    }
+    @media(max-width: 767px) {
+        flex-wrap: wrap;
+        position: relative;
+        bottom: auto;
+        margin-top: 10px;
+    }
     input {
         border: 0;
         border-radius: 6px !important;
@@ -25,6 +33,9 @@ form {
         width: 100%;
         margin-right: 12px;
         color: #6b7280;
+        @media(max-width: 767px){
+            margin-right: 0;
+        }
     }
     .actions {
         input {
@@ -33,7 +44,12 @@ form {
             box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
         }
     }
-
+    @media( max-width:767px) {
+        .hs_submit {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
     .hs-error-msgs label,
     .hs-error-msgs input {
         position: absolute;

@@ -24,12 +24,12 @@ export default class Footer extends React.Component {
       <footer className='footer'>
         <div className='footer__container flex justify-between items-center w-full flex-wrap border-b border-gray-700'>
           <div className='title mb-8 w-full'>
-            <p className='w-6/12'>
+            <p className='w-full md:w-6/12'>
               Make or request payments with a single click from within your ERP,
               connected to your bank account.
             </p>
           </div>
-          <div className='footer__container__left w-auto'>
+          <div className='footer__container__left w-auto mb-6 md:mb-0'>
             <LazyLoadComponent>
               <div className='support flex items-center'>
                 <div className='support__title text-xs leading-4 font-medium uppercase'>
@@ -97,7 +97,7 @@ export default class Footer extends React.Component {
             </LazyLoadComponent>
           </div>
         </div>
-        <div className='footer__bottom mt-9 flex items-center justify-between'>
+        <div className='footer__bottom mt-6 md:mt-9 flex items-center justify-center md:justify-between flex-wrap md:flex-nowrap'>
           <div className='copyright'>
             Copyright 2022 Transcard Payments. All Rights Reserved.
           </div>
@@ -105,7 +105,7 @@ export default class Footer extends React.Component {
             <a
               href='https://www.transcard.com/'
               target='_blank'
-              className='powered flex flex-nowrap items-center'
+              className='powered flex flex-nowrap items-center justify-center md:justify-end w-full mt-4 md:mt-4 md:w-auto'
             >
               <Shield className='mr-1.5' />
               <span>POWERED BY TRANSCARD</span>
