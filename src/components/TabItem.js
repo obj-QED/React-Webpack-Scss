@@ -5,10 +5,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
-
 import ProgressBar from './ProgressBar';
 
-// Style
 import '../assets/style/tabs.scss';
 
 const TabContent = ({
@@ -29,14 +27,10 @@ const TabContent = ({
   const videoRef = React.createRef(null);
 
   const changeProgress = (videoRef) => {
-    // сделай changeProgress при изменении прогресса видео по микросекундам
     const ch = videoProgress;
     if (videoRef.current !== null) {
       const currentTime = videoRef.current.getCurrentTime();
       const duration = videoRef.current.getDuration();
-      // const seek = videoRef.current.seekTo()
-
-      // console.log(seek)
 
       ch['n' + active] = currentTime / duration;
       setVideoProgress(ch);
@@ -139,10 +133,14 @@ const tabItems = ({ items, mode, className }) => {
   return (
     <div className='tab'>
       <div
-        className={classNames('tab-heading mb-6 lg:mb-20 overflow-x-scroll', className, {
-          'flex md:grid grid-cols-2 lg:grid-cols-4 gap-5': mode === 'default',
-          'center-mode': mode === 'center-mode',
-        })}
+        className={classNames(
+          'tab-heading mb-6 lg:mb-20 overflow-x-scroll',
+          className,
+          {
+            'flex md:grid grid-cols-2 lg:grid-cols-4 gap-5': mode === 'default',
+            'center-mode': mode === 'center-mode',
+          },
+        )}
       >
         {items.map((item, index) => {
           return (
