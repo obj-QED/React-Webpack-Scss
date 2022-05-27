@@ -1,10 +1,18 @@
-import React, { StrictMode } from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { useLocation } from 'react-router-dom'
+import React, { StrictMode } from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 
-const SEO = ({ lang, title, description, image, meta, ogDescription, siteName = true }) => {
-  const { pathname } = useLocation()
+const SEO = ({
+  lang,
+  title,
+  description,
+  image,
+  meta,
+  ogDescription,
+  siteName = true,
+}) => {
+  const { pathname } = useLocation();
 
   const site = {
     name: siteName,
@@ -19,11 +27,11 @@ const SEO = ({ lang, title, description, image, meta, ogDescription, siteName = 
       siteName: 'Smart Hub',
       siteUrl: window.location.host,
     },
-  }
+  };
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
-  const titleTemplate = siteName ? `%s | ${site.siteMetadata.siteName}` : '%s'
+  const titleTemplate = siteName ? `%s | ${site.siteMetadata.siteName}` : '%s';
 
   return (
     <Helmet
@@ -59,7 +67,10 @@ const SEO = ({ lang, title, description, image, meta, ogDescription, siteName = 
         },
         {
           property: `og:image`,
-          content: image && image.startsWith('https') ? image : `${site.siteMetadata.siteUrl}${site.image}`,
+          content:
+            image && image.startsWith('https')
+              ? image
+              : `${site.siteMetadata.siteUrl}${site.image}`,
         },
         {
           property: `og:image:width`,
@@ -93,7 +104,9 @@ const SEO = ({ lang, title, description, image, meta, ogDescription, siteName = 
       link={[
         {
           rel: 'canonical',
-          href: `${site.siteMetadata.siteUrl}${pathname.indexOf('/leadership') === 0 ? '/leadership' : pathname}`,
+          href: `${site.siteMetadata.siteUrl}${
+            pathname.indexOf('/leadership') === 0 ? '/leadership' : pathname
+          }`,
         },
       ]}
     >
@@ -123,9 +136,8 @@ const SEO = ({ lang, title, description, image, meta, ogDescription, siteName = 
                 `}
       </script>
     </Helmet>
-  )
-}
-// create prop types for SEO component
+  );
+};
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
@@ -134,7 +146,7 @@ SEO.propTypes = {
   image: PropTypes.string,
   ogDescription: PropTypes.string,
   siteName: PropTypes.string,
-}
+};
 
 SEO.defaultProps = {
   description: ``,
@@ -143,6 +155,6 @@ SEO.defaultProps = {
   description: ``,
   title: ``,
   image: null,
-}
+};
 
 export default SEO;
